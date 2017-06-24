@@ -1,0 +1,893 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网络安全," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="篱笆外小雨" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="软件介绍SuperScan是由Foundstone公司开发的一款免费的扫描工具，功能强大，扫描速度快。 软件下载地址下面开始介绍软件的使用这是一款绿色软件，不需要安装，解压后直接运行可执行文件。（需要以管理员身份运） 运行后的初始界面 扫描（scan）对局域网中的主机进行扫描在“start IP” 填入想要扫描的起始IP地址，在“End IP”填入结束扫描的IP地址。单击箭头按钮将目标IP地址范围">
+<meta name="keywords" content="网络安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用SuperScan对目标主机进行端口扫描&#x2F;网络服务扫描">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/SuperScan/index.html">
+<meta property="og:site_name" content="篱笆外小雨">
+<meta property="og:description" content="软件介绍SuperScan是由Foundstone公司开发的一款免费的扫描工具，功能强大，扫描速度快。 软件下载地址下面开始介绍软件的使用这是一款绿色软件，不需要安装，解压后直接运行可执行文件。（需要以管理员身份运） 运行后的初始界面 扫描（scan）对局域网中的主机进行扫描在“start IP” 填入想要扫描的起始IP地址，在“End IP”填入结束扫描的IP地址。单击箭头按钮将目标IP地址范围">
+<meta property="og:image" content="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan01_zps1klpizww.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/10/58eb2cedb9159.png">
+<meta property="og:image" content="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan03_zpse7ebeldg.png">
+<meta property="og:image" content="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan04_zpsfy0afu4x.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/10/58eb2d4e35c31.png">
+<meta property="og:image" content="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan06_zpsne4s1pqd.png">
+<meta property="og:updated_time" content="2017-04-10T07:33:53.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用SuperScan对目标主机进行端口扫描&#x2F;网络服务扫描">
+<meta name="twitter:description" content="软件介绍SuperScan是由Foundstone公司开发的一款免费的扫描工具，功能强大，扫描速度快。 软件下载地址下面开始介绍软件的使用这是一款绿色软件，不需要安装，解压后直接运行可执行文件。（需要以管理员身份运） 运行后的初始界面 扫描（scan）对局域网中的主机进行扫描在“start IP” 填入想要扫描的起始IP地址，在“End IP”填入结束扫描的IP地址。单击箭头按钮将目标IP地址范围">
+<meta name="twitter:image" content="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan01_zps1klpizww.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/10/SuperScan/"/>
+
+
+
+
+
+  <title> 使用SuperScan对目标主机进行端口扫描/网络服务扫描 | 篱笆外小雨 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c0378722bf6e5178bff1a7bddcda29bd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">篱笆外小雨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/SuperScan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用SuperScan对目标主机进行端口扫描/网络服务扫描
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T10:40:52+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络安全/" itemprop="url" rel="index">
+                    <span itemprop="name">网络安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/10/SuperScan/" class="leancloud_visitors" data-flag-title="使用SuperScan对目标主机进行端口扫描/网络服务扫描">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h2><p>SuperScan是由Foundstone公司开发的一款免费的扫描工具，功能强大，扫描速度快。</p>
+<h3 id="软件下载地址"><a href="#软件下载地址" class="headerlink" title="软件下载地址"></a><a href="http://b2b-download.mcafee.com/products/tools/foundstone/superscan-4.1.zip" target="_blank" rel="external">软件下载地址</a></h3><p>下面开始介绍软件的使用<br>这是一款绿色软件，不需要安装，解压后直接运行可执行文件。（需要以管理员身份运）</p>
+<h3 id="运行后的初始界面"><a href="#运行后的初始界面" class="headerlink" title="运行后的初始界面"></a>运行后的初始界面</h3><p><img src="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan01_zps1klpizww.png"></p>
+<h2 id="扫描（scan）"><a href="#扫描（scan）" class="headerlink" title="扫描（scan）"></a>扫描（scan）</h2><h4 id="对局域网中的主机进行扫描"><a href="#对局域网中的主机进行扫描" class="headerlink" title="对局域网中的主机进行扫描"></a>对局域网中的主机进行扫描</h4><p>在“start IP” 填入想要扫描的起始IP地址，在“End IP”填入结束扫描的IP地址。单击箭头按钮将目标IP地址范围添加到扫描地址池中，运行端口扫描。扫描结束后，可以点击“查看HTML结果”（View HTNL Results），在浏览器器中查看本次扫描结果。出现TCP端口扫描结果为0，是因为由于主机禁止了扫描器的ICMP扫描响应，因此需要修改对主机的扫描方式。下面是一次扫描结果</p>
+<p><img src="https://ooo.0o0.ooo/2017/04/10/58eb2cedb9159.png"></p>
+<p>从结果中可以看出该网络中共有14台活动的主机，其中192.168.191.2开放了7个TCP端口：81、135、139、445、1025、3389、9090。主机192168.191.3开放了8个TCP端口：21、80、135、139、445、1025、1433、3389。</p>
+<h2 id="主机和服务器扫描设置（Host-and-Service-Discover）"><a href="#主机和服务器扫描设置（Host-and-Service-Discover）" class="headerlink" title="主机和服务器扫描设置（Host and Service Discover）"></a>主机和服务器扫描设置（Host and Service Discover）</h2><p>如果扫描结果不满足需求，这就需要对扫描进行一些修改。取消“查找主机”复选框。选中“UDP端口扫描”，将UDP扫描类型设置为Data。选中“TCP端口扫描”，将TCP扫描类型设置为直接连接（Connect）。</p>
+<p><img src="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan03_zpse7ebeldg.png" border="0" alt=" photo SuperScan03_zpse7ebeldg.png"></p>
+<h2 id="扫描选项（Scan-Options）"><a href="#扫描选项（Scan-Options）" class="headerlink" title="扫描选项（Scan Options）"></a>扫描选项（Scan Options）</h2><p>对扫描进程进行进一步的控制。可以设置扫描过程中主机和通过审查的服务数，主机名的解析数，标志获取。标志获取（Banner Grabbing）表示在规定的时间内是否收到回应。</p>
+<p><img src="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan04_zpsfy0afu4x.png"></p>
+<h2 id="工具（Tools）"><a href="#工具（Tools）" class="headerlink" title="工具（Tools）"></a>工具（Tools）</h2><p>SuperScan的Tools可以较快的得到关于一个主机的信息。正确的输入主机名或IP或默认的连接服务器。选择想要进行的操作，相关信息就会在右边的文本框中显示出来。</p>
+<p><img src="https://ooo.0o0.ooo/2017/04/10/58eb2d4e35c31.png"></p>
+<h2 id="Windows枚举（Windows-Enumeration）"><a href="#Windows枚举（Windows-Enumeration）" class="headerlink" title="Windows枚举（Windows Enumeration）"></a>Windows枚举（Windows Enumeration）</h2><p>根据需要枚举出想要查看的Windows主机的相关信息</p>
+<p><img src="http://i682.photobucket.com/albums/vv182/Fence_Rain/My_images/SuperScan06_zpsne4s1pqd.png"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络安全/" rel="tag"># 网络安全</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/07/Creategithub/" rel="next" title="Windows下搭建Node.js + Github个人博客">
+                <i class="fa fa-chevron-left"></i> Windows下搭建Node.js + Github个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/15/Sasuse/" rel="prev" title="SAS的基本应用">
+                SAS的基本应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="篱笆外小雨" />
+          <p class="site-author-name" itemprop="name">篱笆外小雨</p>
+           
+              <p class="site-description motion-element" itemprop="description">刚刚好^_^</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件介绍"><span class="nav-number">1.</span> <span class="nav-text">软件介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件下载地址"><span class="nav-number">1.1.</span> <span class="nav-text">软件下载地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行后的初始界面"><span class="nav-number">1.2.</span> <span class="nav-text">运行后的初始界面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扫描（scan）"><span class="nav-number">2.</span> <span class="nav-text">扫描（scan）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对局域网中的主机进行扫描"><span class="nav-number">2.0.1.</span> <span class="nav-text">对局域网中的主机进行扫描</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主机和服务器扫描设置（Host-and-Service-Discover）"><span class="nav-number">3.</span> <span class="nav-text">主机和服务器扫描设置（Host and Service Discover）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扫描选项（Scan-Options）"><span class="nav-number">4.</span> <span class="nav-text">扫描选项（Scan Options）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具（Tools）"><span class="nav-number">5.</span> <span class="nav-text">工具（Tools）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows枚举（Windows-Enumeration）"><span class="nav-number">6.</span> <span class="nav-text">Windows枚举（Windows Enumeration）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">篱笆外小雨</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("UdC34O6odjmMKw1vy9zjj3gE-gzGzoHsz", "Hgt4VJu1wnk8eeV0ehVOASyX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
