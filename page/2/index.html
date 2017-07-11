@@ -282,6 +282,212 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/21/RegularExpression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/21/RegularExpression/" itemprop="url">
+                  使用正则表达式对信息进行提取
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-21T08:26:05+08:00">
+                2017-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/21/RegularExpression/" class="leancloud_visitors" data-flag-title="使用正则表达式对信息进行提取">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>正则表达式通过按一定的语法规则在一段文字中进行匹配，然后返回匹配结果。</p>
+<blockquote>
+<p>匹配类型：</p>
+<blockquote>
+<p>在一段文本中发现石否包含某个子串<br>抽取出符合正则表达式语法的子串<br>对符合正则表达式的子串进行替换<br>返回一个布尔值，判断是否匹配</p>
+</blockquote>
+</blockquote>
+<p>在 Java 中使用正则表达式的方法如下：<br>Java 中关于正则表达式有两个类，一个接口和一个异常<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Java.util.regex.Pattern;</div><div class="line">Java.util.regex.Matcher; </div><div class="line">Java.util.regex.MatchResult;</div><div class="line">Java.util.regex.PatternSyntaxException;</div></pre></td></tr></table></figure></p>
+<p>一个 Pattern 对象是一个编译的正则表达式，可以用于任何字符串。 一个 Matcher 对象<br>是一个单个的用于一个特别目标字符串的实例。 MatchResult 封装了一次成功匹配的数<br>据。<br>Pattern.compile()方法将一个字符串编译成正则表达式。 即得到一个 Pattern 对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"(&lt;String?&gt;.+?&lt;/String?&gt;)"</span>;</div><div class="line">String str=<span class="string">"&lt;id&gt;4654165ashdjfkl&lt;/id&gt;&lt;String&gt;QWEHASOIUASC&lt;/String&gt;"</span>;</div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">String s;</div><div class="line"><span class="keyword">if</span>(m.find())&#123;</div><div class="line">	s = m.group(<span class="number">1</span>);</div><div class="line">	System.out.println(s);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上例中，字符串 regex 是我们写好的正则表达式的字符串。 变量 str 是待匹配的字符串。<br><code>Pattern p = Pattern.compile(regex);</code><br>将正则表达式字符串编译，得到一个 Pattern 对象。</p>
+<p>Pattern 对象下的 matcher()方法是使用当前编译的正则表达式去匹配字符串，然后得到一个 Matcher 对象。 Matcher 对象的 find()方法判断是否匹配成功。 正则表达式的一次匹配结果可以包含多个子串，用 Matcher 对象的 group 方法来获得匹配结果的多个子串。 其参数是一次匹配中第几个匹配的子串。如上图是一次匹配中的第一个匹配的子串。 （注：一个正则表达式可以从匹配的字符串中抽取多个子串，其中子串用括号来表示，如上例中有一对括号，因此就有一个匹配的子串。 ）</p>
+<h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><p>一些 meta characters：<br>（1）^ 开始字符。例如，^cat 表示匹配一段文字。 这一段文字如果以‘cat’开始，则可以匹配</p>
+<p>（2）$  结束字符。例如，cat$，表示匹配以 cat 结尾的一段文字</p>
+<p>（3）[ ] 字符类，列举想要匹配的字符。例如，gr[ea]y，表示匹配含有 grey 或gray 子串的文字</p>
+<p>（4）- 在字符类内部使用<code>-</code> 表示范围。例如，[0123456789abcdEFGH]可以写成[0-9a-dE-H]。 注：“-”仅仅在字符类内部是 meta character。</p>
+<p>（5）在字符类内部使用<code>^</code>表示非。[^1-6]表示匹配一个字符不是 1 到 6 的。</p>
+<p>（6）. 匹配任意字符。但在字符类[.]内的“.”就是它的字面意思而不是特殊字符。例如正则表达式 03[.]16[.]76 可以匹配 03.16.76，03\16\76，03.16\76，03\16.76。再看正则表达式 “ [0-9].[0-9]” ，表达的是匹配包含下来子串的字符串“ 数字任意字符数字” 。 即子串的第一个字符是数字，第二个字符是任意字符，第三个字符是数字</p>
+<p>（7）| 表示或。例如，Bob|Robert 表示匹配 Bob 或 Robert。正则表达式 Gr[ea]y 可以写成 grey|gray。 也可以写成 gr(e|a)y。但 gr[e|a]y 中的“|”不是特殊字符，是其字面意思。 gr(e|a)y 中括号约束了替换的范围，即两个字符 e 和 a 的替换。</p>
+<p>（8）? 表示选择，即在?前面的字符是可选择的。colou?r 即匹配 color 或者 colour。4(th)?表示匹配 4 或者 4th。此处括号对可选择的多个字符做了限制</p>
+<p>（9）+ 表示一个或多个立即跟随的字符。例如，[0-9]+表示任意长的数字，012，,91 等</p>
+<p>（10）\ 表示后面跟的字符是字面含义，而不是特殊字符。例如，ega.att.com。此处的“.”不是特殊字符而是 literal。 匹配 ega.att.com。</p>
+<p>（11）{min,max} 定义匹配的范围。例如, [a-z]{1,3}表示字母 a-z 可以出现一次，最多三次。</p>
+<p>（12）( ) 有两种含义，一是表示限定范围；二是，当从字符串中取出子串时，括号规定了要提取的子串。</p>
+<p>（13）&gt;  特殊字符:</p>
+<blockquote>
+<blockquote>
+<p>\d 表示数字<br>\D 表示非数字，等于[^\d]<br> \w 等同于[a-zA-Z0-9]<br> \W 等同于 [^\w]<br> \s 空白符等同于[\f\n\r\t\v]<br> \S 非空白符<br> \b 匹配一个 backspace 或 tab 字符</p>
+</blockquote>
+</blockquote>
+<h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><p>（1）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"q[^u]"</span>;</div><div class="line">String str=<span class="string">"Iraq"</span>;</div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">System.out.println(m.find());</div></pre></td></tr></table></figure></p>
+<p>结果是<code>false</code>。该正则表达式，要匹配的字符串包含字符<code>q</code>,并且后面必须跟着一个不是<code>u</code>的字符。</p>
+<p>（2）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"q[^u]"</span>;</div><div class="line">String str=<span class="string">"Qantas"</span>;</div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">System.out.println(m.find());</div></pre></td></tr></table></figure></p>
+<p>结果还是<code>false</code>。应为正则表达式对大小写敏感。如果想要消除这种敏感，编译正则表达式时使用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div></pre></td></tr></table></figure></p>
+<p>（3）<br>两个正则表达式<br>  ^From|Subject|Date:<br>  ^(From|Subject|Date):<br>匹配结果有什么不同<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"^From|Subject|Date:"</span>;</div><div class="line">String regex1=<span class="string">"^(From|Subject|Date):"</span>;</div><div class="line">String str=<span class="string">"hello Subject: dallas"</span>;</div><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div><div class="line">attern p1 = Pattern.compile(regex1, Pattern.CASE_INSENSITIVE);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">Matcher m1 = p1.matcher(str);</div><div class="line">System.out.println(m.find());</div><div class="line">System.out.println(m1.find());</div></pre></td></tr></table></figure></p>
+<p>结果是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">true</span></div><div class="line"><span class="keyword">false</span></div></pre></td></tr></table></figure></p>
+<p>这是因为，第一个正则表达式<code>^From|Subject|Date:</code> 表示匹配<code>^From</code>（被匹配的字符串必须以 From 开头）或者<code>Subject</code> (包含子串 Subject) 或者<code>Date:</code>（包含字符串Date:）。第二个正则表达式<code>^(From|Subject|Date):</code>表示匹配的字符串必须以<code>From:</code>或者<code>Subject:</code> 或者<code>Date:</code>开头。</p>
+<p>（4）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"^h.+d$"</span>;</div><div class="line">String str=<span class="string">"hello world"</span>;</div><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">System.out.println(m.find());</div></pre></td></tr></table></figure></p>
+<p>结果是<code>true</code>。该正则表达式匹配以<code>h</code>开头，<code>d</code>结尾的字符串。<code>.+</code>表示匹配任意多个字符</p>
+<p>（5）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"hello\\.world"</span>;</div><div class="line">String str=<span class="string">"Hi, hello.world, Yes"</span>;</div><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">System.out.println(m.find())</div></pre></td></tr></table></figure></p>
+<p>这段代码中，要匹配一个子串“hello.world”。 因为正则表达式中“.”是特殊字符。因此要匹配该子串，我们写的正则表达式应该是“hello.world”，这里的“\”表示后面的“.”是其字面意思，不是特殊字符。而在 java 中“\”又是特殊字符，我们就再加上一个“\”字符。因此得到了最终的正则表达式”hello\.world”。</p>
+<p>（6）我们要提取字符串“ price is 34$, today is April 12” 中描述的价格。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"([0-9]+)\\$"</span>;</div><div class="line">String str=<span class="string">"price is 34$, today is April 11"</span>;</div><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">String s;</div><div class="line"><span class="keyword">if</span>(m.find())&#123;</div><div class="line">	s=m.group(<span class="number">1</span>);</div><div class="line">	System.out.println(s);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>美元符号$在正则表达式中是特殊字符，当前的例子中，文本中包含了美元符号，因此在写正则表达式时，需要在它的前面加上“\”表示其后的美元符号不是特殊字符。另外，括号的作用在于指示这是要提取出的子串。 因此程序运行结果是 34。</p>
+<p>（7）匹配字符串“ price is 34$, today is April 12” 中的所有数字，即 34 和 11<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"([0-9]+)"</span>;</div><div class="line">String str=<span class="string">"price is 34$, today is April 11"</span>;</div><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div><div class="line">Matcher m;</div><div class="line">String s;</div><div class="line">Integer location=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(location&lt;str.length())&#123;</div><div class="line">	m = p.matcher(str);</div><div class="line">	<span class="keyword">if</span>(m.find(location))&#123;</div><div class="line">		s=m.group(<span class="number">1</span>);</div><div class="line">		System.out.println(s);</div><div class="line">		location=m.end();</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>匹配的结果中包含了匹配的子串的起始位置和结束位置，可以用 Matcher 对象的 start()方法和 end()方法来获得。 定义一个 Integer 类型的变量 location，它记录每趟循环中匹配到的子串的结束位置。find（location）方法，表示从当前 location 的位置去寻找匹配的子串。因此在 while 循环中多次去匹配字符串，发现字符串多个与正则表达式匹配的子串。</p>
+<p>（8）对于包含小数点的数字的提取<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"([0-9]+\\.[0-9]+)"</span>;</div><div class="line">String str=<span class="string">"price is 343.4$, today is April 11"</span>;</div><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div><div class="line">Matcher m;</div><div class="line">String s;</div><div class="line">m = p.matcher(str);</div><div class="line"><span class="keyword">if</span>(m.find())&#123;</div><div class="line">	s=m.group(<span class="number">1</span>);</div><div class="line">	System.out.println(s);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>字符串中混合了小数和整数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"([0-9]+(\\.[0-9]+)?)"</span>;</div><div class="line">String str=<span class="string">"price is 343.4$, today is April 11"</span>;</div><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div><div class="line">Matcher m;</div><div class="line">String s;</div><div class="line">Integer location=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(location&lt;str.length())&#123;</div><div class="line">	m = p.matcher(str);</div><div class="line">	<span class="keyword">if</span>(m.find(location))&#123;</div><div class="line">		s=m.group(<span class="number">1</span>);</div><div class="line">		System.out.println(s);</div><div class="line">		location=m.end();</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>该正则表达式中有两对括号，其中一对嵌入在另一对中。 里面的那一对后面有个<code>?</code>，是用来指示括号里面的内容是“可选择的”。 匹配的子串是外面的那一对括号。</p>
+<p>（9）提取出时间<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"([0-9]?[0-9]:[0-9][0-9]\\s(am|pm)?)"</span>;</div><div class="line">String str=<span class="string">"It is 9:21 am"</span>;</div><div class="line">Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);</div><div class="line">Matcher m;</div><div class="line">String s;</div><div class="line">m = p.matcher(str);</div><div class="line"><span class="keyword">if</span>(m.find())&#123;</div><div class="line">	s=m.group(<span class="number">1</span>);</div><div class="line">	System.out.println(s);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="贪婪模式和非贪婪模式"><a href="#贪婪模式和非贪婪模式" class="headerlink" title="贪婪模式和非贪婪模式"></a>贪婪模式和非贪婪模式</h4><p>贪婪模式，正则表达式默认的是最大匹配。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"&lt;[a-zA-Z]+&gt;.+&lt;/[a-zA-Z]+&gt;"</span>;</div><div class="line">String str=<span class="string">"&lt;p&gt;hello&lt;/p&gt;&lt;div&gt;world&lt;/div&gt;"</span>;</div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m;</div><div class="line">String s;</div><div class="line">Integer location=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(location&lt;str.length())&#123;</div><div class="line">	m = p.matcher(str);</div><div class="line">	<span class="keyword">if</span>(m.find(location))&#123;</div><div class="line">		s=m.group(<span class="number">0</span>);</div><div class="line">		System.out.println(s);</div><div class="line">		location=m.end();</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>结果是<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;hello&lt;/p&gt;&lt;div&gt;world&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>使用非贪婪模式，正则表达式中的“*”或“+”后加上一个 <code>?</code>符号，称为惰性符号<code>&lt;[a-zA-Z]+&gt;.+?&lt;/[a-zA-Z]+&gt;</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">String regex=<span class="string">"&lt;[a-zA-Z]+&gt;.+?&lt;/[a-zA-Z]+&gt;"</span>;</div><div class="line">String str=<span class="string">"&lt;p&gt;hello&lt;/p&gt;&lt;div&gt;world&lt;/div&gt;"</span>;</div><div class="line">Pattern p = Pattern.compile(regex);</div><div class="line">Matcher m;</div><div class="line">String s;</div><div class="line">Integer location=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(location&lt;str.length())&#123;</div><div class="line">	m = p.matcher(str);</div><div class="line">	<span class="keyword">if</span>(m.find(location))&#123;</div><div class="line">		s=m.group(<span class="number">0</span>);</div><div class="line">		System.out.println(s);</div><div class="line">		location=m.end();</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>结果是<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;hello&lt;/p&gt;</div><div class="line">&lt;div&gt;world&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/15/Sasuse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -771,7 +977,7 @@
 <p>向下拖动到GitHub Pages，如下图，找到Source 选择分枝并保存，系统会提示name.github.io可以访问了。可以访问后github的配置就结束了。</p>
 <p><img src="https://ooo.0o0.ooo/2017/04/11/58ec76edb9da0.png"></p>
 <h2 id="5-安装Hexo"><a href="#5-安装Hexo" class="headerlink" title="5.安装Hexo"></a>5.安装Hexo</h2><p>选择一个地方创建文件夹，存放Hexo。进入Hexo文件夹，右键，选择git bash，输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -cli -g</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure>
 <p>出现WARN可不用理会，继续输入以下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
 <p>安装完成后，输入命令，验证是否安装成功</p>
@@ -821,6 +1027,7 @@
 <h2 id="8-配置Deployment"><a href="#8-配置Deployment" class="headerlink" title="8.配置Deployment"></a>8.配置Deployment</h2><p>在_config.yml文件中，找到Deployment, 然后如下修改</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: https://github.com/name/name.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <h2 id="9-添加Hexo-git插件"><a href="#9-添加Hexo-git插件" class="headerlink" title="9.添加Hexo git插件"></a>9.添加Hexo git插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div><div class="line">hexo deploy(可以缩写成d)</div></pre></td></tr></table></figure>
+<p>未安装此插件,在执行 <code>hexo delop</code>时会提示 <code>ERROR Deployer not found: git</code></p>
 <p>到这基本配置应该就结束了，至于主题就选择自己喜欢的去配就好了。如果有什么不对的地方可以指出来，就酱(≧∀≦)ゞ</p>
 <h6 id="图的顺序不知道有没有搞错-зゝ∠"><a href="#图的顺序不知道有没有搞错-зゝ∠" class="headerlink" title="图的顺序不知道有没有搞错(:зゝ∠)"></a>图的顺序不知道有没有搞错<em>(:зゝ∠)</em></h6>
           
@@ -1214,7 +1421,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1225,7 +1432,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
