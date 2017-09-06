@@ -1,0 +1,872 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数据结构," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="篱笆外小雨" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="之前有被问到有没有想过用Java描述排序算法，博主因为学数据结构时用的是C。刚好最近在复习，就准备试着用Java写出来。有不足之处可以私信博主。 邮箱：mxnamx@163.com 插入排序介绍两种插入排序方法：直接插入排序和希尔排序程序代码：123456789101112131415161718192021222324252627282930313233343536373839404142434">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="直接插入排序——Java语言描述">
+<meta property="og:url" content="http://yoursite.com/2017/09/06/InsertSort/index.html">
+<meta property="og:site_name" content="篱笆外小雨">
+<meta property="og:description" content="之前有被问到有没有想过用Java描述排序算法，博主因为学数据结构时用的是C。刚好最近在复习，就准备试着用Java写出来。有不足之处可以私信博主。 邮箱：mxnamx@163.com 插入排序介绍两种插入排序方法：直接插入排序和希尔排序程序代码：123456789101112131415161718192021222324252627282930313233343536373839404142434">
+<meta property="og:updated_time" content="2017-09-06T07:13:00.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="直接插入排序——Java语言描述">
+<meta name="twitter:description" content="之前有被问到有没有想过用Java描述排序算法，博主因为学数据结构时用的是C。刚好最近在复习，就准备试着用Java写出来。有不足之处可以私信博主。 邮箱：mxnamx@163.com 插入排序介绍两种插入排序方法：直接插入排序和希尔排序程序代码：123456789101112131415161718192021222324252627282930313233343536373839404142434">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/06/InsertSort/"/>
+
+
+
+
+
+  <title> 直接插入排序——Java语言描述 | 篱笆外小雨 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c0378722bf6e5178bff1a7bddcda29bd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">篱笆外小雨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/InsertSort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                直接插入排序——Java语言描述
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T14:58:15+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/排序算法/" itemprop="url" rel="index">
+                    <span itemprop="name">排序算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/06/InsertSort/" class="leancloud_visitors" data-flag-title="直接插入排序——Java语言描述">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前有被问到有没有想过用Java描述排序算法，博主因为学数据结构时用的是C。刚好最近在复习，就准备试着用Java写出来。有不足之处可以私信博主。</p>
+<p>邮箱：mxnamx@163.com</p>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h4 id="介绍两种插入排序方法：直接插入排序和希尔排序"><a href="#介绍两种插入排序方法：直接插入排序和希尔排序" class="headerlink" title="介绍两种插入排序方法：直接插入排序和希尔排序"></a>介绍两种插入排序方法：直接插入排序和希尔排序</h4><h5 id="程序代码："><a href="#程序代码：" class="headerlink" title="程序代码："></a>程序代码：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Arrays;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * 插入排序：直接插入排序，希尔排序</div><div class="line"> * </div><div class="line"> * */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StraightInsertion</span> </span>&#123;</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 直接插入排序：每趟将一条待排序的记录，按其关键字值的大小插入到前面的记录序列中的合适位置，直到全部插入完成为止。</div><div class="line">	 * 时间复杂度为O(n^2)</div><div class="line">	 * 空间复杂度为O(1)</div><div class="line">	 * 算法稳定性：直接插入排序是一种稳定的排序算法</div><div class="line">	 * */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span> insert[])</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> temp;</div><div class="line">		<span class="keyword">int</span> i,j;</div><div class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;insert.length;i++)&#123;</div><div class="line">			temp  = insert[i];</div><div class="line">			<span class="keyword">for</span>(j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;insert[j];j--)&#123;</div><div class="line">				insert[j+<span class="number">1</span>]=insert[j];</div><div class="line">			&#125;</div><div class="line">			insert[j+<span class="number">1</span>]=temp;</div><div class="line">			System.out.println(Arrays.toString(insert));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 希尔排序：又称缩小增量排序。先取一个小于n的整数d（称为增量），然后把排序表中的n个记录分为d个子表，</div><div class="line">	 *       从下标为0的记录开始，间隔为d的记录组成一个子表，在各个子表内进行直接插入排序。在一趟之后，</div><div class="line">	 *       间隔为d的记录组成的子表已有序，随着有序性的改善，逐步减小增量d，重复进行上述操作，直到d=1。	 </div><div class="line">	 *空间复杂度为O(1)</div><div class="line">	 *算法稳定性：希尔排序是一种不稳定的排序算法</div><div class="line">	 * */</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ShellSort</span><span class="params">(<span class="keyword">int</span> shell[])</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> temp;</div><div class="line">		<span class="keyword">int</span> i,j,d;</div><div class="line">		<span class="keyword">for</span>(d=shell.length/<span class="number">2</span>;d&gt;<span class="number">0</span>;d /=<span class="number">2</span>)&#123;</div><div class="line">			<span class="keyword">for</span>(i=d;i&lt;shell.length;i++)&#123;</div><div class="line">				temp=shell[i];</div><div class="line">				<span class="keyword">for</span>(j=i-d;j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;shell[j];j -=d)&#123;</div><div class="line">					shell[j+d]=shell[j];</div><div class="line">				&#125;</div><div class="line">				shell[j+d]=temp;</div><div class="line">				System.out.println(Arrays.toString(shell));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">int</span> insert[]=&#123;<span class="number">34</span>,<span class="number">21</span>,<span class="number">67</span>,<span class="number">23</span>,<span class="number">45</span>,<span class="number">56</span>,<span class="number">8</span>,<span class="number">66</span>,<span class="number">70</span>,<span class="number">36</span>&#125;;</div><div class="line">		<span class="keyword">int</span> shell[]=&#123;<span class="number">67</span>,<span class="number">52</span>,<span class="number">42</span>,<span class="number">98</span>,<span class="number">35</span>,<span class="number">7</span>,<span class="number">26</span>,<span class="number">39</span>,<span class="number">18</span>,<span class="number">84</span>&#125;;</div><div class="line">		InsertSort(insert);</div><div class="line">		ShellSort(shell);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="测试结果："><a href="#测试结果：" class="headerlink" title="测试结果："></a>测试结果：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[<span class="number">21</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">23</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">23</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">67</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">67</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">67</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">36</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">39</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">84</span>, <span class="number">98</span>]</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/12/CSS-font/" rel="next" title="CSS样式中字体属性">
+                <i class="fa fa-chevron-left"></i> CSS样式中字体属性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="篱笆外小雨" />
+          <p class="site-author-name" itemprop="name">篱笆外小雨</p>
+           
+              <p class="site-description motion-element" itemprop="description">刚刚好^_^</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序"><span class="nav-number">1.</span> <span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍两种插入排序方法：直接插入排序和希尔排序"><span class="nav-number">1.0.1.</span> <span class="nav-text">介绍两种插入排序方法：直接插入排序和希尔排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#程序代码："><span class="nav-number">1.0.1.1.</span> <span class="nav-text">程序代码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#测试结果："><span class="nav-number">1.0.1.2.</span> <span class="nav-text">测试结果：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">篱笆外小雨</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("UdC34O6odjmMKw1vy9zjj3gE-gzGzoHsz", "Hgt4VJu1wnk8eeV0ehVOASyX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -282,6 +282,163 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/InsertSort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/06/InsertSort/" itemprop="url">
+                  直接插入排序——Java语言描述
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T14:58:15+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/排序算法/" itemprop="url" rel="index">
+                    <span itemprop="name">排序算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/06/InsertSort/" class="leancloud_visitors" data-flag-title="直接插入排序——Java语言描述">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前有被问到有没有想过用Java描述排序算法，博主因为学数据结构时用的是C。刚好最近在复习，就准备试着用Java写出来。有不足之处可以私信博主。</p>
+<p>邮箱：mxnamx@163.com</p>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h4 id="介绍两种插入排序方法：直接插入排序和希尔排序"><a href="#介绍两种插入排序方法：直接插入排序和希尔排序" class="headerlink" title="介绍两种插入排序方法：直接插入排序和希尔排序"></a>介绍两种插入排序方法：直接插入排序和希尔排序</h4><h5 id="程序代码："><a href="#程序代码：" class="headerlink" title="程序代码："></a>程序代码：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Arrays;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * 插入排序：直接插入排序，希尔排序</div><div class="line"> * </div><div class="line"> * */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StraightInsertion</span> </span>&#123;</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 直接插入排序：每趟将一条待排序的记录，按其关键字值的大小插入到前面的记录序列中的合适位置，直到全部插入完成为止。</div><div class="line">	 * 时间复杂度为O(n^2)</div><div class="line">	 * 空间复杂度为O(1)</div><div class="line">	 * 算法稳定性：直接插入排序是一种稳定的排序算法</div><div class="line">	 * */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span> insert[])</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> temp;</div><div class="line">		<span class="keyword">int</span> i,j;</div><div class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;insert.length;i++)&#123;</div><div class="line">			temp  = insert[i];</div><div class="line">			<span class="keyword">for</span>(j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;insert[j];j--)&#123;</div><div class="line">				insert[j+<span class="number">1</span>]=insert[j];</div><div class="line">			&#125;</div><div class="line">			insert[j+<span class="number">1</span>]=temp;</div><div class="line">			System.out.println(Arrays.toString(insert));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 希尔排序：又称缩小增量排序。先取一个小于n的整数d（称为增量），然后把排序表中的n个记录分为d个子表，</div><div class="line">	 *       从下标为0的记录开始，间隔为d的记录组成一个子表，在各个子表内进行直接插入排序。在一趟之后，</div><div class="line">	 *       间隔为d的记录组成的子表已有序，随着有序性的改善，逐步减小增量d，重复进行上述操作，直到d=1。	 </div><div class="line">	 *空间复杂度为O(1)</div><div class="line">	 *算法稳定性：希尔排序是一种不稳定的排序算法</div><div class="line">	 * */</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ShellSort</span><span class="params">(<span class="keyword">int</span> shell[])</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> temp;</div><div class="line">		<span class="keyword">int</span> i,j,d;</div><div class="line">		<span class="keyword">for</span>(d=shell.length/<span class="number">2</span>;d&gt;<span class="number">0</span>;d /=<span class="number">2</span>)&#123;</div><div class="line">			<span class="keyword">for</span>(i=d;i&lt;shell.length;i++)&#123;</div><div class="line">				temp=shell[i];</div><div class="line">				<span class="keyword">for</span>(j=i-d;j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;shell[j];j -=d)&#123;</div><div class="line">					shell[j+d]=shell[j];</div><div class="line">				&#125;</div><div class="line">				shell[j+d]=temp;</div><div class="line">				System.out.println(Arrays.toString(shell));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">int</span> insert[]=&#123;<span class="number">34</span>,<span class="number">21</span>,<span class="number">67</span>,<span class="number">23</span>,<span class="number">45</span>,<span class="number">56</span>,<span class="number">8</span>,<span class="number">66</span>,<span class="number">70</span>,<span class="number">36</span>&#125;;</div><div class="line">		<span class="keyword">int</span> shell[]=&#123;<span class="number">67</span>,<span class="number">52</span>,<span class="number">42</span>,<span class="number">98</span>,<span class="number">35</span>,<span class="number">7</span>,<span class="number">26</span>,<span class="number">39</span>,<span class="number">18</span>,<span class="number">84</span>&#125;;</div><div class="line">		InsertSort(insert);</div><div class="line">		ShellSort(shell);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="测试结果："><a href="#测试结果：" class="headerlink" title="测试结果："></a>测试结果：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[<span class="number">21</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">23</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">23</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">67</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">67</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">67</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">36</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">39</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">84</span>, <span class="number">98</span>]</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/CSS-font/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1704,167 +1861,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/03/Interface/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="篱笆外小雨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="篱笆外小雨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/03/Interface/" itemprop="url">
-                  Java接口与实现
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T17:42:06+08:00">
-                2017-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/03/Interface/" class="leancloud_visitors" data-flag-title="Java接口与实现">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口包含接口声明和接口体</p>
-<h4 id="接口声明"><a href="#接口声明" class="headerlink" title="接口声明"></a>接口声明</h4><p>接口使用关键字 <strong> interface </strong> 来声明接口。格式如下：    </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">interfance 接口名字</div></pre></td></tr></table></figure>
-<h4 id="接口体"><a href="#接口体" class="headerlink" title="接口体"></a>接口体</h4><p>接口体中包含常量的声明（没有变量）和抽象方法两部分。接口体中只有抽象方法没有普通方法，而且接口体中所有的常量的访问权限一定都是 <strong> public </strong> ，而且是 <strong> static </strong> 常量（允许省略 <strong> public </strong> 、 <strong> final </strong> 和 <strong> static  </strong> 修饰符），所有的抽象方法的访问权限一定都是 <strong> public  </strong> （允许省略 <strong> public abstract </strong> 修饰符）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Font</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> max = <span class="number">50</span>;   <span class="comment">//等价于：int max = 50;</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span></span>;    <span class="comment">//等价于：void add();</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">float</span> <span class="title">sum</span><span class="params">(<span class="keyword">float</span> a, <span class="keyword">float</span> b)</span></span>;  <span class="comment">//等价于：float sum(float a, float b);</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h3><p>在Java中，接口由类来实现以便使用接口中的方法。一个类需要在类声明中使用关键字 <strong> implements </strong> 声明该类实现一个或多个接口。实现多个接口用逗号隔开接口名。</p>
-<h4 id="一个简单的实例-广告牌，展示多个公司广告词"><a href="#一个简单的实例-广告牌，展示多个公司广告词" class="headerlink" title="一个简单的实例 广告牌，展示多个公司广告词"></a>一个简单的实例 广告牌，展示多个公司广告词</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Advertisement</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">showAdvertisement</span><span class="params">()</span></span>;</div><div class="line">	<span class="function">String <span class="title">getName</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CompanyA</span> <span class="keyword">implements</span> <span class="title">Advertisement</span>  </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showAdvertisement</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"everything is possible!"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"coompanyA"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CompanyB</span> <span class="keyword">implements</span> <span class="title">Advertisement</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showAdvertisement</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"just do youself!"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"companyB"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AdvertisementBoard</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Advertisement advertisement)</span> </span>&#123;</div><div class="line">		System.out.println(advertisement.getName()+<span class="string">" Advertisement ："</span>);</div><div class="line">		advertisement.showAdvertisement();  <span class="comment">//接口回调</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Interface</span> </span>&#123;	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		AdvertisementBoard board = <span class="keyword">new</span> AdvertisementBoard();</div><div class="line">		board.show(<span class="keyword">new</span> CompanyA());</div><div class="line">		board.show(<span class="keyword">new</span> CompanyB());	</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>运行结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">coompanyA Advertisement</div><div class="line">everything is possible!</div><div class="line">companyB Advertisement</div><div class="line">just do youself!</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1914,7 +1910,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1925,7 +1921,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1936,7 +1932,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
