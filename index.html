@@ -282,6 +282,164 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/ExchangeSort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/06/ExchangeSort/" itemprop="url">
+                  冒泡排序与快速排序——Java语言描述
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T21:12:28+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/排序算法/" itemprop="url" rel="index">
+                    <span itemprop="name">排序算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/06/ExchangeSort/" class="leancloud_visitors" data-flag-title="冒泡排序与快速排序——Java语言描述">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有意见与建议请私戳（￣︶￣）↗  邮箱：mxnamx@163.com</p>
+<h4 id="冒泡排序与快速排序都应用了交换排序基本思想。所谓交换排序就是两两比较待排序记录的关键字，若两个记录的次序相反则交换这两个记录，直到没有反序的记录为止。"><a href="#冒泡排序与快速排序都应用了交换排序基本思想。所谓交换排序就是两两比较待排序记录的关键字，若两个记录的次序相反则交换这两个记录，直到没有反序的记录为止。" class="headerlink" title="冒泡排序与快速排序都应用了交换排序基本思想。所谓交换排序就是两两比较待排序记录的关键字，若两个记录的次序相反则交换这两个记录，直到没有反序的记录为止。"></a>冒泡排序与快速排序都应用了交换排序基本思想。所谓交换排序就是两两比较待排序记录的关键字，若两个记录的次序相反则交换这两个记录，直到没有反序的记录为止。</h4><p>程序代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Arrays;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExchangeSort</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 冒泡排序：将待排序的数组看作从上到下排列，把关键字值较小的记录看作“较轻的”，关键字值较大的看作“较重的”，</div><div class="line">	 *       较小的关键字值看记录好像水中的气泡一样，向上“浮”；较大关键字值的记录就如水中的石头向下沉，当所有</div><div class="line">	 *     	   的气泡都浮到了相应的位置，并且所有的石块都沉到了水底，排序就结束了。</div><div class="line">	 * 空间复杂度为O(1)</div><div class="line">	 * 时间复杂度为O(n^2)</div><div class="line">	 * 算法稳定性：冒泡排序是一种稳定的排序算法。</div><div class="line">	 * */</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 主要步骤归纳：</div><div class="line">	 * 	1.设置初值i=1;</div><div class="line">	 * 	2.在无序序列&#123;a[0],a[1],...a[n-1]&#125;中，从头至尾依次比较相邻的两个记录</div><div class="line">	 * 	  a[j]与a[j=1]（0&lt;=j&lt;=n-i-1）,若a[j].key&gt;a[j+1].key,则交换位置。</div><div class="line">	 * 	3.i=i+1;</div><div class="line">	 * 	4.重复步骤2,3，直到在步骤2中未发生记录交换成i=n-1为止。</div><div class="line">	 * </div><div class="line">	 * */	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span> bubble[])</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> temp;</div><div class="line">		<span class="keyword">boolean</span> flag=<span class="keyword">true</span>;  <span class="comment">//记录是否发生交换</span></div><div class="line">		<span class="keyword">int</span> i,j;</div><div class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;bubble.length &amp;&amp; flag;i++)&#123; <span class="comment">//有交换时再进行下一趟，最多n-1趟</span></div><div class="line">			flag=<span class="keyword">false</span>;</div><div class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;bubble.length-i;j++)&#123;</div><div class="line">				<span class="keyword">if</span>(bubble[j]&gt;bubble[j+<span class="number">1</span>])&#123;   <span class="comment">//逆序时，相互交换位置</span></div><div class="line">					temp=bubble[j];</div><div class="line">					bubble[j]=bubble[j+<span class="number">1</span>];</div><div class="line">					bubble[j+<span class="number">1</span>]=temp;</div><div class="line">					flag=<span class="keyword">true</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"趟："</span>+Arrays.toString(bubble));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 快速排序：通过一趟排序将要排序的记录分隔成独立的两个部分，其中一部分的所有记录的关键字值都比</div><div class="line">	 * 	               另一部分的所有记录关键字值小，然后再按此方法对这两部分记录分别进行快速排序，整个记录</div><div class="line">	 * 		 过程可以递归进行，以此达到整个记录序列变成有序</div><div class="line">	 * 空间复杂度为O(logn)</div><div class="line">	 * 时间复杂度:最坏为O(n^2)，平均为O(nlogn)</div><div class="line">	 * 算法稳定性：快速排序是一种不稳定的排序算法</div><div class="line">	 * */</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 主要步骤：</div><div class="line">	 * 	1.设置两个变量i,j，初始值分别为low和high，分别表示待排序序列的起始下标和终止下标；</div><div class="line">	 * 	2.将第i个记录暂存在变量temp中，及temp=Q[i];</div><div class="line">	 * 	3.从小标为j的位置开始由后向前以此搜索，当找到第一个比temp的关键字小的记录时，则将该</div><div class="line">	 * 		记录向前移动到下标为i的位置上，然后i=i+1;</div><div class="line">	 * 	4.从下标为i的位置开始由前向后依次搜索，当找到第一个比temp的关键字值大的记录时，则将</div><div class="line">	 * 		该记录向后移动到下标为j的位置上，然后j=j-1;</div><div class="line">	 * 	5.重复2,3,4步骤，直到i==j;</div><div class="line">	 * 	6.Q[i]=temp.</div><div class="line">	 * </div><div class="line">	 * */</div><div class="line">	</div><div class="line">	<span class="comment">//一趟快速排序算法</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">Quick</span><span class="params">(<span class="keyword">int</span> quick[],<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> temp=quick[i];</div><div class="line">		<span class="keyword">while</span>(i&lt;j)&#123;	<span class="comment">//从表的两端交替向中间扫描</span></div><div class="line">			<span class="keyword">while</span>(i&lt;j &amp;&amp; temp&lt;=quick[j])&#123;</div><div class="line">				j--;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>(i&lt;j)&#123;</div><div class="line">				quick[i]=quick[j];	<span class="comment">//将比quick[i]的关键字值小的记录向前移动</span></div><div class="line">				i++;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">while</span>(i&lt;j &amp;&amp; temp&gt;quick[i])&#123;</div><div class="line">				i++;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>(i&lt;j)&#123;</div><div class="line">				quick[j]=quick[i];	<span class="comment">//将比quick[i]的关键字值大的记录向后移动</span></div><div class="line">				j--;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		quick[i]=temp;</div><div class="line">		System.out.println(Arrays.toString(quick));</div><div class="line">		<span class="keyword">return</span> i;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//递归形式的快速排序算法</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> quick[],<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(low&lt;high)&#123;</div><div class="line">			<span class="keyword">int</span> i=Quick(quick, low, high) ; <span class="comment">//一趟排序将序列分为两部分</span></div><div class="line">			QuickSort(quick,low,i-<span class="number">1</span>);	<span class="comment">//低子表递归排序</span></div><div class="line">			QuickSort(quick, i+<span class="number">1</span>, high);	<span class="comment">//高子表递归排序</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">int</span> bubble[]=&#123;<span class="number">52</span>,<span class="number">24</span>,<span class="number">76</span>,<span class="number">9</span>,<span class="number">50</span>,<span class="number">64</span>,<span class="number">17</span>,<span class="number">39</span>,<span class="number">47</span>,<span class="number">15</span>&#125;;</div><div class="line">		<span class="keyword">int</span> quick[]=&#123;<span class="number">52</span>,<span class="number">39</span>,<span class="number">67</span>,<span class="number">95</span>,<span class="number">70</span>,<span class="number">8</span>,<span class="number">25</span>,<span class="number">52</span>,<span class="number">45</span>,<span class="number">19</span>&#125;;</div><div class="line">		BubbleSort(bubble);</div><div class="line">		System.out.println(<span class="string">"---------------------分割线--------------------"</span>);</div><div class="line">		QuickSort(quick, <span class="number">0</span>, quick.length-<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>测试结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">第<span class="number">1</span>趟：[<span class="number">24</span>, <span class="number">52</span>, <span class="number">9</span>, <span class="number">50</span>, <span class="number">64</span>, <span class="number">17</span>, <span class="number">39</span>, <span class="number">47</span>, <span class="number">15</span>, <span class="number">76</span>]</div><div class="line">第<span class="number">2</span>趟：[<span class="number">24</span>, <span class="number">9</span>, <span class="number">50</span>, <span class="number">52</span>, <span class="number">17</span>, <span class="number">39</span>, <span class="number">47</span>, <span class="number">15</span>, <span class="number">64</span>, <span class="number">76</span>]</div><div class="line">第<span class="number">3</span>趟：[<span class="number">9</span>, <span class="number">24</span>, <span class="number">50</span>, <span class="number">17</span>, <span class="number">39</span>, <span class="number">47</span>, <span class="number">15</span>, <span class="number">52</span>, <span class="number">64</span>, <span class="number">76</span>]</div><div class="line">第<span class="number">4</span>趟：[<span class="number">9</span>, <span class="number">24</span>, <span class="number">17</span>, <span class="number">39</span>, <span class="number">47</span>, <span class="number">15</span>, <span class="number">50</span>, <span class="number">52</span>, <span class="number">64</span>, <span class="number">76</span>]</div><div class="line">第<span class="number">5</span>趟：[<span class="number">9</span>, <span class="number">17</span>, <span class="number">24</span>, <span class="number">39</span>, <span class="number">15</span>, <span class="number">47</span>, <span class="number">50</span>, <span class="number">52</span>, <span class="number">64</span>, <span class="number">76</span>]</div><div class="line">第<span class="number">6</span>趟：[<span class="number">9</span>, <span class="number">17</span>, <span class="number">24</span>, <span class="number">15</span>, <span class="number">39</span>, <span class="number">47</span>, <span class="number">50</span>, <span class="number">52</span>, <span class="number">64</span>, <span class="number">76</span>]</div><div class="line">第<span class="number">7</span>趟：[<span class="number">9</span>, <span class="number">17</span>, <span class="number">15</span>, <span class="number">24</span>, <span class="number">39</span>, <span class="number">47</span>, <span class="number">50</span>, <span class="number">52</span>, <span class="number">64</span>, <span class="number">76</span>]</div><div class="line">第<span class="number">8</span>趟：[<span class="number">9</span>, <span class="number">15</span>, <span class="number">17</span>, <span class="number">24</span>, <span class="number">39</span>, <span class="number">47</span>, <span class="number">50</span>, <span class="number">52</span>, <span class="number">64</span>, <span class="number">76</span>]</div><div class="line">第<span class="number">9</span>趟：[<span class="number">9</span>, <span class="number">15</span>, <span class="number">17</span>, <span class="number">24</span>, <span class="number">39</span>, <span class="number">47</span>, <span class="number">50</span>, <span class="number">52</span>, <span class="number">64</span>, <span class="number">76</span>]</div><div class="line">---------------------分割线--------------------</div><div class="line">[<span class="number">19</span>, <span class="number">39</span>, <span class="number">45</span>, <span class="number">25</span>, <span class="number">8</span>, <span class="number">52</span>, <span class="number">70</span>, <span class="number">52</span>, <span class="number">95</span>, <span class="number">67</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">19</span>, <span class="number">45</span>, <span class="number">25</span>, <span class="number">39</span>, <span class="number">52</span>, <span class="number">70</span>, <span class="number">52</span>, <span class="number">95</span>, <span class="number">67</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">19</span>, <span class="number">39</span>, <span class="number">25</span>, <span class="number">45</span>, <span class="number">52</span>, <span class="number">70</span>, <span class="number">52</span>, <span class="number">95</span>, <span class="number">67</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">19</span>, <span class="number">25</span>, <span class="number">39</span>, <span class="number">45</span>, <span class="number">52</span>, <span class="number">70</span>, <span class="number">52</span>, <span class="number">95</span>, <span class="number">67</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">19</span>, <span class="number">25</span>, <span class="number">39</span>, <span class="number">45</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">70</span>, <span class="number">95</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">19</span>, <span class="number">25</span>, <span class="number">39</span>, <span class="number">45</span>, <span class="number">52</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">70</span>, <span class="number">95</span>]</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/InsertSort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -305,7 +463,7 @@
               
                 
                 <a class="post-title-link" href="/2017/09/06/InsertSort/" itemprop="url">
-                  直接插入排序——Java语言描述
+                  直接插入排序与希尔排序——Java语言描述
                 </a>
               
             
@@ -361,7 +519,7 @@
 
           
           
-             <span id="/2017/09/06/InsertSort/" class="leancloud_visitors" data-flag-title="直接插入排序——Java语言描述">
+             <span id="/2017/09/06/InsertSort/" class="leancloud_visitors" data-flag-title="直接插入排序与希尔排序——Java语言描述">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -392,7 +550,7 @@
       
         
           
-            <p>之前有被问到有没有想过用Java描述排序算法，博主因为学数据结构时用的是C。刚好最近在复习，就准备试着用Java写出来。有不足之处可以私信博主。</p>
+            <p>之前有被问到有没有想过用Java描述排序算法，很不好意思的回答了没有。因为学数据结构时用的是C。刚好最近在复习，就准备试着用Java写出来。有不足之处可以私戳。</p>
 <p>邮箱：mxnamx@163.com</p>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h4 id="介绍两种插入排序方法：直接插入排序和希尔排序"><a href="#介绍两种插入排序方法：直接插入排序和希尔排序" class="headerlink" title="介绍两种插入排序方法：直接插入排序和希尔排序"></a>介绍两种插入排序方法：直接插入排序和希尔排序</h4><h5 id="程序代码："><a href="#程序代码：" class="headerlink" title="程序代码："></a>程序代码：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Arrays;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * 插入排序：直接插入排序，希尔排序</div><div class="line"> * </div><div class="line"> * */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StraightInsertion</span> </span>&#123;</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 直接插入排序：每趟将一条待排序的记录，按其关键字值的大小插入到前面的记录序列中的合适位置，直到全部插入完成为止。</div><div class="line">	 * 时间复杂度为O(n^2)</div><div class="line">	 * 空间复杂度为O(1)</div><div class="line">	 * 算法稳定性：直接插入排序是一种稳定的排序算法</div><div class="line">	 * */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span> insert[])</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> temp;</div><div class="line">		<span class="keyword">int</span> i,j;</div><div class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;insert.length;i++)&#123;</div><div class="line">			temp  = insert[i];</div><div class="line">			<span class="keyword">for</span>(j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;insert[j];j--)&#123;</div><div class="line">				insert[j+<span class="number">1</span>]=insert[j];</div><div class="line">			&#125;</div><div class="line">			insert[j+<span class="number">1</span>]=temp;</div><div class="line">			System.out.println(Arrays.toString(insert));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 希尔排序：又称缩小增量排序。先取一个小于n的整数d（称为增量），然后把排序表中的n个记录分为d个子表，</div><div class="line">	 *       从下标为0的记录开始，间隔为d的记录组成一个子表，在各个子表内进行直接插入排序。在一趟之后，</div><div class="line">	 *       间隔为d的记录组成的子表已有序，随着有序性的改善，逐步减小增量d，重复进行上述操作，直到d=1。	 </div><div class="line">	 *空间复杂度为O(1)</div><div class="line">	 *算法稳定性：希尔排序是一种不稳定的排序算法</div><div class="line">	 * */</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ShellSort</span><span class="params">(<span class="keyword">int</span> shell[])</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> temp;</div><div class="line">		<span class="keyword">int</span> i,j,d;</div><div class="line">		<span class="keyword">for</span>(d=shell.length/<span class="number">2</span>;d&gt;<span class="number">0</span>;d /=<span class="number">2</span>)&#123;</div><div class="line">			<span class="keyword">for</span>(i=d;i&lt;shell.length;i++)&#123;</div><div class="line">				temp=shell[i];</div><div class="line">				<span class="keyword">for</span>(j=i-d;j&gt;=<span class="number">0</span> &amp;&amp; temp&lt;shell[j];j -=d)&#123;</div><div class="line">					shell[j+d]=shell[j];</div><div class="line">				&#125;</div><div class="line">				shell[j+d]=temp;</div><div class="line">				System.out.println(Arrays.toString(shell));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">int</span> insert[]=&#123;<span class="number">34</span>,<span class="number">21</span>,<span class="number">67</span>,<span class="number">23</span>,<span class="number">45</span>,<span class="number">56</span>,<span class="number">8</span>,<span class="number">66</span>,<span class="number">70</span>,<span class="number">36</span>&#125;;</div><div class="line">		<span class="keyword">int</span> shell[]=&#123;<span class="number">67</span>,<span class="number">52</span>,<span class="number">42</span>,<span class="number">98</span>,<span class="number">35</span>,<span class="number">7</span>,<span class="number">26</span>,<span class="number">39</span>,<span class="number">18</span>,<span class="number">84</span>&#125;;</div><div class="line">		InsertSort(insert);</div><div class="line">		ShellSort(shell);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h5 id="测试结果："><a href="#测试结果：" class="headerlink" title="测试结果："></a>测试结果：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[<span class="number">21</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">23</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">23</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">67</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">67</span>, <span class="number">56</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">67</span>, <span class="number">8</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">67</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>, <span class="number">36</span>]</div><div class="line">[<span class="number">8</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">36</span>, <span class="number">45</span>, <span class="number">56</span>, <span class="number">66</span>, <span class="number">67</span>, <span class="number">70</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">98</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">18</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">39</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">67</span>, <span class="number">52</span>, <span class="number">42</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">35</span>, <span class="number">26</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">98</span>, <span class="number">84</span>]</div><div class="line">[<span class="number">7</span>, <span class="number">18</span>, <span class="number">26</span>, <span class="number">35</span>, <span class="number">39</span>, <span class="number">42</span>, <span class="number">52</span>, <span class="number">67</span>, <span class="number">84</span>, <span class="number">98</span>]</div></pre></td></tr></table></figure>
@@ -1687,180 +1845,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/12/SearchBox/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="篱笆外小雨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="篱笆外小雨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/12/SearchBox/" itemprop="url">
-                  基于Lucene的Java Web 搜索引擎设计
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T09:07:39+08:00">
-                2017-05-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/12/SearchBox/" class="leancloud_visitors" data-flag-title="基于Lucene的Java Web 搜索引擎设计">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这是一个简易的搜索引擎。该设计是针对PDF文档的搜索。用户提供关键词，搜索引擎返回搜索结果到用户界面，用户通过返回的超链接可查看文档的详细内容。</p>
-<h4 id="设计概述"><a href="#设计概述" class="headerlink" title="设计概述"></a>设计概述</h4><p>首先，通过BuildIndex创建文档的索引。然后，将关键词作为Search的参数，返回查询结构，文档内容高亮显示。</p>
-<h4 id="jar包"><a href="#jar包" class="headerlink" title="jar包"></a>jar包</h4><p><img src="http://i67.tinypic.com/2lbkxn9.jpg" alt="img"></p>
-<h4 id="创建索引（BuildIndex-java）"><a href="#创建索引（BuildIndex-java）" class="headerlink" title="创建索引（BuildIndex.java）"></a>创建索引（BuildIndex.java）</h4><p>创建索引的过程就是将每个文档转化成Document对象，然后调用IndexWriter的addDocument方法将Document对象添加到索引中。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">(String sdir, String indexPath)</span> <span class="keyword">throws</span> Exception</span>&#123;</div><div class="line">	File fdir=<span class="keyword">new</span> File(sdir);</div><div class="line">	File[] flist=fdir.listFiles();</div><div class="line">	Document doc;		</div><div class="line">	Analyzer analyzer=<span class="keyword">new</span> IKAnalyzer();</div><div class="line">	IndexWriterConfig conf = <span class="keyword">new</span> IndexWriterConfig(analyzer);</div><div class="line">	conf.setOpenMode(IndexWriterConfig.OpenMode.CREATE);</div><div class="line">	Directory dir = FSDirectory.open(Paths.get(indexPath));</div><div class="line">	IndexWriter idxWriter=<span class="keyword">new</span> IndexWriter(dir,conf);		</div><div class="line">	<span class="keyword">for</span>(File f : flist)&#123;</div><div class="line">		doc=buildDoc(f);</div><div class="line">		idxWriter.addDocument(doc);</div><div class="line">	&#125;</div><div class="line">	idxWriter.close();</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * 为一篇文档建立document对象</div><div class="line"> * <span class="doctag">@throws</span> FileNotFoundException </div><div class="line"> * */</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Document <span class="title">buildDoc</span><span class="params">(File f)</span> <span class="keyword">throws</span> Exception</span>&#123;</div><div class="line">	String fname=f.getPath();</div><div class="line">	Document doc=<span class="keyword">new</span> Document();</div><div class="line">	FieldType offsetsType = <span class="keyword">new</span> FieldType(TextField.TYPE_STORED);</div><div class="line">	offsetsType.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS);</div><div class="line">	Field body = <span class="keyword">new</span> Field(<span class="string">"contents"</span>, getContent(f), offsetsType);</div><div class="line">	doc.add(body);</div><div class="line">	doc.add(<span class="keyword">new</span> StringField(<span class="string">"path"</span>,fname,Field.Store.YES));</div><div class="line">	<span class="keyword">return</span> doc;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="提取PDF文档内容（ReadPDF-java）"><a href="#提取PDF文档内容（ReadPDF-java）" class="headerlink" title="提取PDF文档内容（ReadPDF.java）"></a>提取PDF文档内容（ReadPDF.java）</h4><p>使用PDF-Box所提供的库从PDF文档中提取内容。<br>PDFbox是一个开源的、基于Java的、支持PDF文档生成的工具库，它可以用于创建新的PDF文档，修改现有的PDF文档，还可以从PDF文档中提取所需的内容。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">readPdf</span><span class="params">(String path)</span> <span class="keyword">throws</span> Exception </span>&#123; </div><div class="line">		StringBuffer content = <span class="keyword">new</span> StringBuffer(<span class="string">""</span>);<span class="comment">// 文档内容</span></div><div class="line">     	  	FileInputStream fis = <span class="keyword">new</span> FileInputStream(path);</div><div class="line">      	 	PDFParser p = <span class="keyword">new</span> PDFParser(<span class="keyword">new</span> RandomAccessBuffer(fis));</div><div class="line">     	  	p.parse();</div><div class="line">     	  	PDDocument document= p.getPDDocument();</div><div class="line">      	 	PDFTextStripper ts = <span class="keyword">new</span> PDFTextStripper();</div><div class="line">      	 	content.append(ts.getText(document));</div><div class="line">       		fis.close();</div><div class="line">       		document.close();</div><div class="line">      	 	<span class="keyword">return</span> content.toString().trim();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="关键词查询（Search-java）"><a href="#关键词查询（Search-java）" class="headerlink" title="关键词查询（Search.java）"></a>关键词查询（Search.java）</h4><p>建立好索引后，就可以利用索引进行关键词查询。创建分析器Analyze，采用QueryParser实现模糊查询。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;String&gt; <span class="title">run</span><span class="params">(String indexPath, String queryVal)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">	ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;(); </div><div class="line">	String field=<span class="string">"contents"</span>;</div><div class="line">	TopDocs docs;</div><div class="line">	ScoreDoc sdoc[] = <span class="keyword">null</span>;</div><div class="line">	IndexSearcher is;</div><div class="line">	Analyzer analyzer;</div><div class="line">	QueryParser parser;</div><div class="line">	Query query;</div><div class="line">	Document doc = <span class="keyword">null</span>;</div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">		IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(indexPath)));</div><div class="line">		is=<span class="keyword">new</span> IndexSearcher(reader); </div><div class="line">		analyzer = <span class="keyword">new</span> StandardAnalyzer();</div><div class="line">		parser = <span class="keyword">new</span> QueryParser(field, analyzer);</div><div class="line">		query=parser.parse(queryVal);</div><div class="line">		docs=is.search(query, <span class="number">10</span>);</div><div class="line">		sdoc=docs.scoreDocs;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sdoc.length;i++)&#123;</div><div class="line">			doc = is.doc(sdoc[i].doc);</div><div class="line">	        list.add(doc.get(<span class="string">"path"</span>));</div><div class="line">		&#125;			</div><div class="line">	&#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">		e.printStackTrace();</div><div class="line">		System.exit(<span class="number">1</span>);</div><div class="line">	&#125;		</div><div class="line">	<span class="keyword">return</span> list;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="高亮显示（Highlighter-java）"><a href="#高亮显示（Highlighter-java）" class="headerlink" title="高亮显示（Highlighter.java）"></a>高亮显示（Highlighter.java）</h4><p>高亮显示技术，是搜索引擎常用到的一项重要技术。在搜索引擎开发中引入高亮显示技术，使搜索结果一目了然。<br>在Lucene5.X的Highlighter包中提供了一个简单的Highlighter功能，PostingsHighlighter。实现步骤为，创建PostingsHighlighter对象，创建对象查询结果，获取查询结果，获取该查询结果所对应的高亮snippets。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String[] run(String indexPath, String queryVal) <span class="keyword">throws</span> Exception&#123;</div><div class="line">	String field=<span class="string">"contents"</span>;</div><div class="line">	TopDocs docs;</div><div class="line">	IndexSearcher is;</div><div class="line">	Analyzer analyzer;</div><div class="line">	QueryParser parser;</div><div class="line">	Query query;</div><div class="line">	String highlights[] = <span class="keyword">null</span>;</div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">		IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(indexPath)));</div><div class="line">		is=<span class="keyword">new</span> IndexSearcher(reader); </div><div class="line">		analyzer = <span class="keyword">new</span> StandardAnalyzer();</div><div class="line">		parser = <span class="keyword">new</span> QueryParser(field, analyzer);</div><div class="line">		query=parser.parse(queryVal);</div><div class="line">		docs=is.search(query, <span class="number">10</span>);			</div><div class="line">		PostingsHighlighter highlighter = <span class="keyword">new</span> PostingsHighlighter();</div><div class="line">		highlights = highlighter.highlight(<span class="string">"contents"</span>, query, is, docs, <span class="number">3</span>)</div><div class="line">	&#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">		e.printStackTrace();</div><div class="line">		System.exit(<span class="number">1</span>);</div><div class="line">	&#125;		</div><div class="line">	<span class="keyword">return</span> highlights;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="用户界面"><a href="#用户界面" class="headerlink" title="用户界面"></a>用户界面</h4><p>用户界面采用B/S架构（浏览器/服务器模式）实现。服务器端使用Java Servlet技术完成，用户通过浏览器输入待查询关键词，服务器端返回搜索到的相关文档，客户端显示响应的查询结果的路径超链接，以及发现关键词的部分段落。点击超链接查看文档的详细内容。</p>
-<h5 id="用户主界面（index-jsp）"><a href="#用户主界面（index-jsp）" class="headerlink" title="用户主界面（index.jsp）"></a>用户主界面（index.jsp）</h5><p>Index.jsp提供了一个查询初始界面，它接受用户所要查询的的关键词，并将这个词传给Result Servlet做下一步处理。</p>
-<p><img src="http://i64.tinypic.com/5o9rt2.jpg" alt="img"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;div style="height:150px;"&gt;&lt;/div&gt;</div><div class="line">&lt;form action="Result" method="post"&gt;</div><div class="line">	&lt;div class="b_searchboxForm"&gt;	</div><div class="line">		&lt;input class="b_searchbox" id="sb_form_q" name="q" title="输入搜索词" value="" maxlength="100" type="search"&gt;</div><div class="line">		&lt;input class="b_searchboxSubmit" id="sb_form_go" title="搜索" tabindex="0" name="go" value="Go" type="submit" &gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<h5 id="查询结果（Result-java）"><a href="#查询结果（Result-java）" class="headerlink" title="查询结果（Result.java）"></a>查询结果（Result.java）</h5><p>Result Servlet 使用request.getParameter(“q”);获取用户查询的关键词，将关键词作为参数送给Highlighter和Search并获取返回的相应结果集。使用一个循环将获取的信息返回给用户。</p>
-<p><img src="http://i63.tinypic.com/4id5wj.jpg"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">	String sdir=<span class="string">"E:\\Program\\woskspace EE\\SearchBox\\www2016"</span>;</div><div class="line">	String indexPath = <span class="string">"E:\\Program\\woskspace EE\\SearchBox\\index"</span>;</div><div class="line">	String search = request.getParameter(<span class="string">"q"</span>);</div><div class="line">	String result[]=<span class="keyword">null</span>;</div><div class="line">	ArrayList&lt;String&gt; path = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line"><span class="comment">//		BuildIndex.run(sdir, indexPath);（只需在程序第一次运行时执行）</span></div><div class="line">		result = Highlighter.run(indexPath, search);</div><div class="line">		path=Search.run(indexPath, search);</div><div class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125;</div><div class="line">	PrintWriter out= response.getWriter();</div><div class="line">	</div><div class="line">	response.setContentType(<span class="string">"text/html"</span>);</div><div class="line">	out.println(<span class="string">"&lt;html&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;body style=\"background-color: #ffc;\"&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;div style=\"font-family: \"Segoe UI\",Segoe,Tahoma,Arial,Verdana,sans-serif ;font-size: 18px;\"&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;form name=\"input\" action=\"Result\" method=\"post\" &gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;input type=\"text\" name=\"q\" id=\"s\" style=\"width:550px; max-height:40px; height:45px; margin-top:3px&gt;; border: 1px #e5e5e5 solid;\"&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;input type=\"submit\" value=\"Go\"style=\"width:42px; height:42px; border: 1px #ccc solid;\"&gt;"</span>); </div><div class="line">	out.println(<span class="string">"&lt;br&gt;&lt;br&gt;"</span>); </div><div class="line">	out.println(<span class="string">"&lt;/div&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;div&gt;"</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;path.size();i++)&#123;</div><div class="line">		out.println(<span class="string">"&lt;p font-size=\"20px\" &gt;"</span>);</div><div class="line">		out.println(<span class="string">"&lt;a href='Document?path="</span>+path.get(i)+<span class="string">"'&gt;"</span>+path.get(i)+<span class="string">"&lt;/a&gt;"</span>);</div><div class="line">		out.println(<span class="string">"&lt;/p&gt;"</span>);</div><div class="line">		out.println(<span class="string">"&lt;p font-size=\"18px\"&gt;"</span>+result[i]+<span class="string">"&lt;/p&gt;"</span>);</div><div class="line">		out.println(<span class="string">"&lt;br&gt;"</span>);</div><div class="line">	&#125;</div><div class="line">	out.println(<span class="string">"&lt;/div&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;/body&gt;"</span>); </div><div class="line">	out.println(<span class="string">"&lt;/html&gt;"</span>); </div><div class="line">	out.flush(); </div><div class="line">	out.close(); 		</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="文档内容显示（Document-java）"><a href="#文档内容显示（Document-java）" class="headerlink" title="文档内容显示（Document.java）"></a>文档内容显示（Document.java）</h5><p>Document Servlet通过request.getParameter(“path”)获取Result Servlet提供的文档路径。创建Document对象，采用PDFTextStripper读取文档内容，PDDocumentInformation获取文档信息，如标题。按顺序输出文档内容。</p>
-<p><img src="http://i63.tinypic.com/orrwic.jpg" alt="img"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">	PrintWriter out= response.getWriter();</div><div class="line">	String path = request.getParameter(<span class="string">"path"</span>);</div><div class="line">	out.println(<span class="string">"&lt;html&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;body style=\"background-color: #ffc;\"&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;div style=\"font-family: \"Segoe UI\",Segoe,Tahoma,Arial,Verdana,sans-serif ;font-size: 18px;\"&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;form name=\"input\" action=\"Result\" method=\"post\" &gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;input type=\"text\" name=\"q\" id=\"s\" style=\"width:550px; max-height:40px; height:45px; margin-top:3px&gt;; border: 1px #e5e5e5 solid;\"&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;input type=\"submit\" value=\"Go\"style=\"width:42px; height:42px; border: 1px #ccc solid;\"&gt;"</span>); </div><div class="line">	out.println(<span class="string">"&lt;br&gt;&lt;br&gt;"</span>); </div><div class="line">	out.println(<span class="string">"&lt;/div&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;div&gt;"</span>);</div><div class="line">	PDDocument document = <span class="keyword">null</span>;</div><div class="line">	File PDFpath= <span class="keyword">new</span> File(path);</div><div class="line">       <span class="keyword">try</span></div><div class="line">       &#123;</div><div class="line">		document=PDDocument.load(PDFpath);</div><div class="line">           <span class="comment">// 读文本信息与内容</span></div><div class="line">		PDDocumentInformation info = document.getDocumentInformation();</div><div class="line">         	PDFTextStripper stripper=<span class="keyword">new</span> PDFTextStripper();</div><div class="line">           <span class="comment">// 设置按顺序输出</span></div><div class="line">           stripper.setSortByPosition(<span class="keyword">true</span>);</div><div class="line">           String content = stripper.getText(document);</div><div class="line">           out.println(info.getTitle()); </div><div class="line">           out.println(<span class="string">"&lt;br&gt;&lt;br&gt;&lt;br&gt;"</span>);</div><div class="line">           out.println(content);</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">catch</span>(Exception e)</div><div class="line">       &#123;</div><div class="line">       	e.printStackTrace();</div><div class="line">       &#125;</div><div class="line">	out.println(<span class="string">"&lt;/div&gt;"</span>);</div><div class="line">	out.println(<span class="string">"&lt;/body&gt;"</span>); </div><div class="line">	out.println(<span class="string">"&lt;/html&gt;"</span>); </div><div class="line">	document.close();</div><div class="line">	out.flush(); </div><div class="line">	out.close(); 	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1910,7 +1894,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
