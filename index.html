@@ -282,6 +282,164 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/URL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/19/URL/" itemprop="url">
+                  Java 网络编程——URL
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T21:46:20+08:00">
+                2017-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/19/URL/" class="leancloud_visitors" data-flag-title="Java 网络编程——URL">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="URL类是java-net包中的一个重要的类。一个URL对象封装着一个具体的资源引用。URL对象通常包含最基本的三部分信息：协议、地址和资源。"><a href="#URL类是java-net包中的一个重要的类。一个URL对象封装着一个具体的资源引用。URL对象通常包含最基本的三部分信息：协议、地址和资源。" class="headerlink" title="URL类是java.net包中的一个重要的类。一个URL对象封装着一个具体的资源引用。URL对象通常包含最基本的三部分信息：协议、地址和资源。"></a>URL类是java.net包中的一个重要的类。一个URL对象封装着一个具体的资源引用。URL对象通常包含最基本的三部分信息：协议、地址和资源。</h4><h4 id="URL的构造方法"><a href="#URL的构造方法" class="headerlink" title="URL的构造方法"></a>URL的构造方法</h4><h5 id="方法一：public-URL-String-str-throws-MalformedURLException-该构造方法使用字符串初始化一个URL对象。"><a href="#方法一：public-URL-String-str-throws-MalformedURLException-该构造方法使用字符串初始化一个URL对象。" class="headerlink" title="方法一：public URL(String str) throws MalformedURLException. 该构造方法使用字符串初始化一个URL对象。"></a>方法一：public URL(String str) throws MalformedURLException. 该构造方法使用字符串初始化一个URL对象。</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">	URL url = <span class="keyword">new</span> URL(<span class="string">"http://www.baidu.com"</span>);</div><div class="line">&#125;<span class="keyword">catch</span>(MalformedURLException e)&#123;</div><div class="line">	System.out.println(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="方法二：public-URL-String-protocol-String-host-String-file-throws-MalformedURLException。该构造方法使用的协议、地址和资源分别由protocol、host和file指定。"><a href="#方法二：public-URL-String-protocol-String-host-String-file-throws-MalformedURLException。该构造方法使用的协议、地址和资源分别由protocol、host和file指定。" class="headerlink" title="方法二：public URL(String protocol, String host, String file) throws MalformedURLException。该构造方法使用的协议、地址和资源分别由protocol、host和file指定。"></a>方法二：public URL(String protocol, String host, String file) throws MalformedURLException。该构造方法使用的协议、地址和资源分别由protocol、host和file指定。</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">	URL url = <span class="keyword">new</span> URL(protocol,host,file);</div><div class="line">&#125;<span class="keyword">catch</span>(MalformedURLException e)&#123;</div><div class="line">	System.out.println(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="读取URL中的资源"><a href="#读取URL中的资源" class="headerlink" title="读取URL中的资源"></a>读取URL中的资源</h4><p>URL 对象调用InputStream openStream()方法可以返回一个输入流，该输入流指向URL对象所包含的资源。</p>
+<p>程序代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.InputStream;</div><div class="line"><span class="keyword">import</span> java.net.URL;</div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line">    </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadUrl</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Scanner in;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		Thread readurl;</div><div class="line">		URL url;</div><div class="line">	    Look look = <span class="keyword">new</span> Look();</div><div class="line">	    System.out.println(<span class="string">"请输入URL，例如：http://www.baidu.com:"</span>);</div><div class="line">	    String string = in.nextLine();</div><div class="line"><span class="comment">//	    System.out.println("请输入URL协议：");</span></div><div class="line"><span class="comment">//	    String protocol = in.next();</span></div><div class="line"><span class="comment">//	    System.out.println("请输入URL地址：");</span></div><div class="line"><span class="comment">//	    String host = in.next();</span></div><div class="line">	    <span class="keyword">try</span>&#123;</div><div class="line">	    	</div><div class="line">	    	url = <span class="keyword">new</span> URL(string);</div><div class="line">	 <span class="comment">//   	url = new URL(protocol,host,"");</span></div><div class="line">	    	look.setURL(url);</div><div class="line">	    	readurl = <span class="keyword">new</span> Thread(look);</div><div class="line">	    	readurl.start();</div><div class="line">	    &#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">	    	System.out.println(e);</div><div class="line">	    &#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Look</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</div><div class="line"></div><div class="line">	URL url;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setURL</span><span class="params">(URL url)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.url=url;</div><div class="line">	&#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			InputStream inputStream = url.openStream();</div><div class="line">			<span class="keyword">byte</span> [] bs = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line">			<span class="keyword">int</span> n = -<span class="number">1</span>;</div><div class="line">			<span class="keyword">while</span>((n=inputStream.read(bs))!=-<span class="number">1</span>)&#123;</div><div class="line">				String string = <span class="keyword">new</span> String(bs, <span class="number">0</span>, n);</div><div class="line">				System.out.println(string);</div><div class="line">			&#125;</div><div class="line">		&#125;<span class="keyword">catch</span>(IOException e)&#123;&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/12/Math/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1691,167 +1849,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/Eclipse-Property/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="篱笆外小雨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="篱笆外小雨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/24/Eclipse-Property/" itemprop="url">
-                  Eclipse实用技巧：部分选项属性设置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T10:32:24+08:00">
-                2017-06-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Eclipse/" itemprop="url" rel="index">
-                    <span itemprop="name">Eclipse</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/06/24/Eclipse-Property/" class="leancloud_visitors" data-flag-title="Eclipse实用技巧：部分选项属性设置">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>简单介绍Eclipse的部分选项属性设置</p>
-<h3 id="设置UTF-8编码格式"><a href="#设置UTF-8编码格式" class="headerlink" title="设置UTF-8编码格式"></a>设置UTF-8编码格式</h3><p><strong> window–&gt;preference–&gt;General–&gt;Workspace–&gt;Text file encoding–&gt;Other–&gt;UTF-8 </strong></p>
-<h3 id="设置Eclipse字体大小和样式"><a href="#设置Eclipse字体大小和样式" class="headerlink" title="设置Eclipse字体大小和样式"></a>设置Eclipse字体大小和样式</h3><p><strong> window–&gt;preference–&gt;General–&gt;APPearance–&gt;Colors and Fonts–&gt;Basic–&gt;Text Font–&gt;Edit </strong></p>
-<h3 id="设置Web下JSP编码格式"><a href="#设置Web下JSP编码格式" class="headerlink" title="设置Web下JSP编码格式"></a>设置Web下JSP编码格式</h3><p><strong> window–&gt;preference–&gt;Web–&gt;JSP Files–&gt;Encoding–&gt;ISO 10646/Unicode(UTF-8) </strong></p>
-<h3 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h3><p><strong> window–&gt;preference–&gt;Server–&gt;Runtime Environments–&gt;Add–&gt;Apache(版本自己选)–&gt;next–&gt;Browse(服务器路径)–&gt;Finish </strong></p>
-<h3 id="设置Eclipse黑色主题"><a href="#设置Eclipse黑色主题" class="headerlink" title="设置Eclipse黑色主题"></a>设置Eclipse黑色主题</h3><p><strong> window–&gt;preference–&gt;General–&gt;APPearance–&gt;Theme–&gt;Dark </strong></p>
-<h3 id="设置显示行数"><a href="#设置显示行数" class="headerlink" title="设置显示行数"></a>设置显示行数</h3><p><strong> window–&gt;preference–&gt;General–&gt;Editors–&gt;Text Editors–&gt;Show line numbers </strong></p>
-<h3 id="设置代码自动补全"><a href="#设置代码自动补全" class="headerlink" title="设置代码自动补全"></a>设置代码自动补全</h3><p><strong> window–&gt;preference–&gt;Java–&gt;Editor–&gt;Content Assist–&gt;Auto activation triggers for Java:–&gt;.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ </strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1901,7 +1898,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
