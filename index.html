@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -404,7 +404,8 @@
         
           
           个人理解，仅供参考 ─=≡Σ(((つ??ω??)つ
-排序就是将无序的记录变为有序的记录。判断排序方法是否的稳定：当记录中存在相同的关键字时，关键字在排序前后相对位置关系不变插入排序直接插入排序：从第二个关键字开始，依次与其前面的所有关键字比较希尔排序：排序表中含有n个记录，取当前表长的1/2为增量d，将其分为d个子表，子表关键字数为d+1。对子表进行直接插入排序。一趟排序结束后缩小增量，重复上述操作，直到增量为1。交换排序冒泡排序：两相邻的关键字相比较。n个记录，第0个记录与第1个记录比较，比较完后的第1个记录再与第2个记录比较，直到所有记录比较完，一趟比较结束，此后每趟比较的最后一位记录不再
+排序就是将无序的记录变为有序的记录。判断排序方法是否的稳定：当记录中存在相同的关键字时，关键字在排序前后相对位置关系不变插入排序 直接插入排序：从第二个关键字开始，依次与其前面的所有关键字比较
+ 希尔排序：排序表中含有n个记录，取当前表长的1/2为
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -564,7 +565,7 @@
       
         
           
-          SharedPreferences 是使用键值对的方式存储数据，是Android平台上用于存储如配置信息等轻量级存储数据的接口。为每一条数据提供一个对应的键，在读取数据时通过键把相应的值取出来。支持多种数据类型存储，存储方便简单代码Activity1234567891011121314151617181920212223242526272829303132333435363738import android.content.SharedPreferences;import android.os.Bundle;import android.support.v7.app.AppCompatActi
+          SharedPreferences 是使用键值对的方式存储数据，是Android平台上用于存储如配置信息等轻量级存储数据的接口。为每一条数据提供一个对应的键，在读取数据时通过键把相应的值取出来。支持多种数据类型存储，存储方便简单代码Activity12345678910111213141516171
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -726,10 +727,7 @@
           
           微信小程序中的文件类型有
 1 .json 后缀的 JSON 配置文件2 .wxml 后缀的 WXML 模板文件3 .wxss 后缀的 WXSS 样式文件4 .js 后缀的 JS 脚本逻辑文件
-JSON配置文件** app.json 是对当前小程序的全局配置，包括所有页面路径、界面表现、网络超时时间、底部tab等
-  注: .json不支持注释 
-
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152/** 小程序所有页面路径*/"pages":[	"page
+JSON配置文件** app.json 是对当前小程序的全局配置，包括所有页面路径、界面表现、网络超时时间、
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1049,7 +1047,7 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
       
         
           
-          在Android开发中实现button（按钮）点击事件的方法有几种，这里介绍其中三种：方法一：当前类实现OnClickListener接口并在其必须实现的onClick方法中添加事件1234567891011121314151617181920212223import android.os.Bundle;import android.support.v7.app.AppCompatActivity;import android.view.View;import android.view.View.OnClickListener;import android.widget.Button;impo
+          在Android开发中实现button（按钮）点击事件的方法有几种，这里介绍其中三种：方法一：当前类实现OnClickListener接口并在其必须实现的onClick方法中添加事件1234567891011121314151617181920212223import android.os.Bund
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1209,8 +1207,7 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
       
         
           
-          URL类是java.net包中的一个重要的类。一个URL对象封装着一个具体的资源引用。URL对象通常包含最基本的三部分信息：协议、地址和资源。URL的构造方法方法一：public URL(String str) throws MalformedURLException. 该构造方法使用字符串初始化一个URL对象。12345try&#123;	URL url = new URL("http://www.baidu.com");&#125;catch(MalformedURLException e)&#123;	System.out.println(e);&#125;
-方法二：public URL
+          URL类是java.net包中的一个重要的类。一个URL对象封装着一个具体的资源引用。URL对象通常包含最基本的三部分信息：协议、地址和资源。URL的构造方法方法一：public URL(String str) throws MalformedURLException. 该构造方法使用字符串初始化一
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1371,9 +1368,7 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
         
           
           有段时间没看书了，连基本的控制台读取都不太记得了(〒︿〒)  为了方便以后查阅还是记下来好了(･ω･)/(ﾉД｀ﾟ)ﾟ
-思路：从控制台读取以空格为分隔符的数据，首先将所有输入看作一个字符串，利用String类提供的分解方法public String[] split(String regex),方法参数为分隔符（正则表达式），分解的结果存放到数组中。1String strign[] = str.split(regex);
-整数的平方实现可用 Math.pow(n,2)方法或 n*n。1Math.pow(n,m);	//表示n的m次方
-整数平方根可用 Math.sqrt()方法。1Math.sqr
+思路：从控制台读取以空格为分隔符的数据，首先将所有输入看作一个字符串，利用String类提供的分解方法public String[] split(String regex),方法参
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1534,7 +1529,7 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
         
           
           归并排序 所谓“归并”，是将两个或两个以上的有序文件合并成一个新的有序文件。其中将两个有序表合并成一个有序表的归并排序称为2-路归并。程序代码
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960import java.util.Arrays;public class MergingSort &#123;	/**	 * 2-路归并排序：将长度为n的待排序记录看作是一个含有n个长度为1的有序子表，把这些子表以次两两归并，	 * 
+123456789101112131415161718192021222324252627282930313233343536373839404142434
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1695,7 +1690,7 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
         
           
           选择排序的主要思想是每一趟从待排序列中选取一个关键字值最小的记录，也即第一趟从n个记录中选取关键字值最小的记录，在第二趟中，从剩下的n-1个记录中选取关键字值最小的记录，直到整个序列的记录都选完为止。程序代码
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101
+123456789101112131415161718192021222324252627
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1856,7 +1851,7 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
         
           
           冒泡排序与快速排序都应用了交换排序基本思想。所谓交换排序就是两两比较待排序记录的关键字，若两个记录的次序相反则交换这两个记录，直到没有反序的记录为止。程序代码
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102import java.util.Array
+1234567891011121314151617181920212223242526272829303132333435363738394
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2032,7 +2027,7 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Muse
   </a>
 </div>
 
@@ -2110,13 +2105,6 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
 
