@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/15/Sort/index.html">
 <meta property="og:site_name" content="篱笆外小雨">
 <meta property="og:description" content="个人理解，仅供参考 ─=≡Σ(((つ??ω??)つ 排序就是将无序的记录变为有序的记录。判断排序方法是否的稳定：当记录中存在相同的关键字时，关键字在排序前后相对位置关系不变插入排序 直接插入排序：从第二个关键字开始，依次与其前面的所有关键字比较  希尔排序：排序表中含有n个记录，取当前表长的1/2为增量d，将其分为d个子表，子表关键字数为d+1。对子表进行直接插入排序。一趟排序结束后缩小增量，重复">
-<meta property="og:updated_time" content="2017-12-15T09:07:55.553Z">
+<meta property="og:updated_time" content="2017-12-26T04:00:57.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构——排序">
 <meta name="twitter:description" content="个人理解，仅供参考 ─=≡Σ(((つ??ω??)つ 排序就是将无序的记录变为有序的记录。判断排序方法是否的稳定：当记录中存在相同的关键字时，关键字在排序前后相对位置关系不变插入排序 直接插入排序：从第二个关键字开始，依次与其前面的所有关键字比较  希尔排序：排序表中含有n个记录，取当前表长的1/2为增量d，将其分为d个子表，子表关键字数为d+1。对子表进行直接插入排序。一趟排序结束后缩小增量，重复">
@@ -404,7 +404,132 @@
 <h4 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h4><p><strong> 冒泡排序：两相邻的关键字相比较。n个记录，第0个记录与第1个记录比较，比较完后的第1个记录再与第2个记录比较，直到所有记录比较完，一趟比较结束，此后每趟比较的最后一位记录不再参与下次比较。开始下一趟比较，直到结束。
 </strong> 快速排序：一趟排序将记录分为两部分，在对两部分分别进行快速排序。  一趟快速排序，i,j为排序记录的起始下标和终止下标，第i+1个记录为temp，从下标j开始，由后向前，找到一个比temp小的记录，将记录放到下标i位置，i++。接着由下标i开始，由前向后，找到一个比temp大的记录，将记录放到下标j位置，j–。重复搜索步骤，直到i==j。第i+1个记录为temp。</p>
 <h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>** 直接选择排序：每趟都是找出最小的记录与开始记录交换位置，每趟结束的开始位置的记录不再参与下一趟。</p>
-<h4 id="排序算法性能比较（稳定性与时间空间复杂度）"><a href="#排序算法性能比较（稳定性与时间空间复杂度）" class="headerlink" title="排序算法性能比较（稳定性与时间空间复杂度）"></a>排序算法性能比较（稳定性与时间空间复杂度）</h4><table><br> <tr><td>排序算法</td><td>平均时间复杂度</td><td>最好时间复杂度</td><td>最坏时间复杂度</td><td>空间复杂度</td><td>稳定性</td></tr><br> <tr><td>直接插入排序</td><td>O(n^2)</td><td>O(n)</td><td>O(n^2)</td><td>O(1)</td><td>稳定</td></tr><br> <tr><td>希尔排序</td><td>/</td><td>/</td><td>/</td><td>O(1)</td><td>不稳定</td></tr><br> <tr><td>冒泡排序</td><td>O(n^2)</td><td>O(n^2)</td><td>O(n^2)</td><td>O(1)</td><td>稳定</td></tr><br> <tr><td>快速排序</td><td>O(nlogn)</td><td>O(nlogn)</td><td>O(n^2)</td><td>O(logn)</td><td>不稳定</td></tr><br> <tr><td>直接选择排序</td><td>O(n^2)</td><td>O(n^2)</td><td>O(n^2)</td><td>O(1)</td><td>不稳定</td></tr><br> <tr><td>堆排序</td><td>O(nlogn)</td><td>O(nlogn)</td><td>O(nlogn)</td><td>O(1)</td><td>不稳定</td></tr><br> <tr><td>归并排序</td><td>O(nlogn)</td><td>O(nlogn)</td><td>O(nlogn)</td><td>O(n)</td><td>稳定</td></tr><br></table>
+<h4 id="排序算法性能比较（稳定性与时间空间复杂度）"><a href="#排序算法性能比较（稳定性与时间空间复杂度）" class="headerlink" title="排序算法性能比较（稳定性与时间空间复杂度）"></a>排序算法性能比较（稳定性与时间空间复杂度）</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">排序算法</th>
+<th style="text-align:center">平均时间复杂度</th>
+<th style="text-align:center">最好时间复杂度</th>
+<th style="text-align:center">最坏时间复杂度</th>
+<th style="text-align:center">空间复杂度</th>
+<th style="text-align:center">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">直接插入排序</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">:——-:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+</tr>
+<tr>
+<td style="text-align:center">希尔排序</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">:——-:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+</tr>
+<tr>
+<td style="text-align:center">冒泡排序</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">:——-:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+</tr>
+<tr>
+<td style="text-align:center">快速排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">:——-:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+</tr>
+<tr>
+<td style="text-align:center">直接选择排序</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">:——-:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+</tr>
+<tr>
+<td style="text-align:center">堆排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">:——-:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+</tr>
+<tr>
+<td style="text-align:center">归并排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">:——-:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+<td style="text-align:center">:——–:</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -456,6 +581,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/27/SoftwareTesting/" rel="prev" title="软件测试基础知识">
+                软件测试基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -529,7 +658,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -540,7 +669,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -551,7 +680,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
