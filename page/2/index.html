@@ -282,6 +282,167 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/MergeSort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/07/MergeSort/" itemprop="url">
+                  归并排序——Java语言描述
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T20:52:21+08:00">
+                2017-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/排序算法/" itemprop="url" rel="index">
+                    <span itemprop="name">排序算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/07/MergeSort/" class="leancloud_visitors" data-flag-title="归并排序——Java语言描述">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          归并排序 所谓“归并”，是将两个或两个以上的有序文件合并成一个新的有序文件。其中将两个有序表合并成一个有序表的归并排序称为2-路归并。程序代码
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960import java.util.Arrays;public class MergingSort &#123;	/**	 * 2-路归并排序：将长度为n的待排序记录看作是一个含有n个长度为1的有序子表，把这些子表以次两两归并，	 * 			 得到[n/2]个有序的子表；然后再把这[n/2]个有序子表进行两两归并，如此重复，	 * 			 直到最后得到一个长度为n的有序子表为止。	 * 空间复杂度为O(n)	 * 时间复杂度为O(nlogn)	 * 算法稳定性：2-路归并排序是一种稳定的排序算法	 * */		/* 两个有序列表的归并算法 */	public static void Merge(int merge[],int temp[],int m,int n,int k) &#123;		int i,j;		int len = n-m+1;				for(i=k+1,j=m; m&lt;=k &amp;&amp; i&lt;=n; j++)&#123;	//将merg中的记录由小到大并入temp			if(merge[m]&lt;merge[i])&#123;				temp[j]=merge[m++];			&#125;			else &#123;				temp[j] = merge[i++];			&#125;		&#125;		for(; m&lt;=k; j++)&#123;	////将剩余的merge[n...m]复制到temp			temp[j] = merge[m++];		&#125;		for(; i&lt;=n; j++)&#123;  //将剩余的merge[i...n]复制到temp			temp[j] = merge[i++];		&#125;				for(i=0; i&lt;len; i++)&#123;		//将temp复制到merge			merge[n] = temp
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/07/MergeSort/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/SelectionSort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1741,169 +1902,6 @@ i后面是安装包的文件名出现错误：google-chrome-stable1sudo apt-get 
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/25/Snake/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="篱笆外小雨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="篱笆外小雨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/25/Snake/" itemprop="url">
-                  Java 贪吃蛇
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T23:09:15+08:00">
-                2017-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/25/Snake/" class="leancloud_visitors" data-flag-title="Java 贪吃蛇">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          刚考完试，趁着现在还有空，弄了一下贪吃蛇的游戏。本来想弄个HTML版的，奈何不会JS，就弄了个Java的。整个程序由三个类（MainInterface、Snake、SNode）构成。
-数据参数建议自己定义变量名，这样使用起来比较方便，也便于修改。如画板的宽度和高度，蛇与食物的大小。
-完成效果长这样
-MainInterface.java123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110	import javax.swing.*;import java.awt.*;import java.awt.event.KeyEvent;import java.awt.event.KeyListener;public class MainInterface extends JFrame implements KeyListener &#123;	Snake snake;	static int rx;    static int ry;    static  int score = 0;    boolean start = false;	public MainInterface() &#123;		super("贪吃蛇");		snake=new Snake();		//食物出现的位置		rx = ((int)(Math.random() * (500 - 20) + 60))/10*10;	    ry = ((int)(Math.random() * (500 - 40) + 60))/10*10;	    		this.setSize(600, 600);        this.setVisible(true);        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         addKeyListener(this);//添加
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/25/Snake/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1953,7 +1951,7 @@ MainInterface.java12345678910111213141516171819202122232425262728293031323334353
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1975,7 +1973,7 @@ MainInterface.java12345678910111213141516171819202122232425262728293031323334353
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2024,7 +2022,7 @@ MainInterface.java12345678910111213141516171819202122232425262728293031323334353
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
