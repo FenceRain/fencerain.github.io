@@ -392,9 +392,16 @@
       
         
           
-          描述：给定一个字符串，将字符串反序输出。
-
-          
+          描述：给定一个字符串，将字符串反转（逆序）输出。例如，“hello”输出为“olleh”。
+方法一：将String转换成char，用遍历的方式从后向前遍历。
+123for(int i=string.length()-1;i&gt;=0;i--)&#123;			System.out.print(string.charAt(i));		&#125;
+或者1234char ch[] = string.toCharArray();		for(int j=ch.length-1;j&gt;=0;j--)&#123;			System.out.print(ch[j]);		&#125;
+方法二：使用jdk自带reverse方法
+1234StringBuilder sBuilder = new StringBuilder(string);		StringBuffer sBuffer = new StringBuffer(string);		System.out.println(sBuilder.reverse().toString());		System.out.println(sBuffer.reverse().toString());
+注：String类本身没有反转类，需要包装成Stringbulid或者StringBuffer类。
+完整代码：
+1234567891011121314151617181920212223242526272829public class StringReverse &#123;		public static void main(String[] args) &#123;		String string = "hello";		StringReverse stringReverse = new StringReverse();		stringReverse.Fun1(string);		stringReverse.Fun2(string);			&#125;	//方法一：String转成char	public void Fun1(String string)&#123;		char ch[] = string.toCharArray();		for(int j=ch.length-1;j&gt;=0;j--)&#123;			System.out.
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/19/Reverse/#more" rel="contents">
@@ -2121,7 +2128,7 @@ JSON配置文件** app.json 是对当前小程序的全局配置，包括所有�
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
