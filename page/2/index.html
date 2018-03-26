@@ -282,6 +282,170 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/URL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/19/URL/" itemprop="url">
+                  Java 网络编程——URL
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T21:46:20+08:00">
+                2017-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/19/URL/" class="leancloud_visitors" data-flag-title="Java 网络编程——URL">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          URL类是java.net包中的一个重要的类。一个URL对象封装着一个具体的资源引用。URL对象通常包含最基本的三部分信息：协议、地址和资源。URL的构造方法方法一：public URL(String str) throws MalformedURLException. 该构造方法使用字符串初始化一个URL对象。12345try&#123;	URL url = new URL("http://www.baidu.com");&#125;catch(MalformedURLException e)&#123;	System.out.println(e);&#125;
+方法二：public URL(String protocol, String host, String file) throws MalformedURLException。该构造方法使用的协议、地址和资源分别由protocol、host和file指定。12345try&#123;	URL url = new URL(protocol,host,file);&#125;catch(MalformedURLException e)&#123;	System.out.println(e);&#125;
+读取URL中的资源URL 对象调用InputStream openStream()方法可以返回一个输入流，该输入流指向URL对象所包含的资源。
+程序代码
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455import java.io.IOException;import java.io.InputStream;import java.net.URL;import java.util.Scanner;    public class ReadUrl &#123;	private static Scanner in;	public static void main(String[] args) &#123;		in = new Scanner(System.in);		Thread readurl;		URL url;	    Look look = new Loo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/19/URL/#далее" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/12/Math/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -401,7 +565,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/12/Math/#more" rel="contents">
+            <a class="btn" href="/2017/09/12/Math/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -562,7 +726,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/07/MergeSort/#more" rel="contents">
+            <a class="btn" href="/2017/09/07/MergeSort/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -723,7 +887,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/07/SelectionSort/#more" rel="contents">
+            <a class="btn" href="/2017/09/07/SelectionSort/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -884,7 +1048,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/06/ExchangeSort/#more" rel="contents">
+            <a class="btn" href="/2017/09/06/ExchangeSort/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1045,7 +1209,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/06/InsertSort/#more" rel="contents">
+            <a class="btn" href="/2017/09/06/InsertSort/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1205,7 +1369,7 @@
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/12/CSS-font/#more" rel="contents">
+            <a class="btn" href="/2017/07/12/CSS-font/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1373,7 +1537,7 @@ CSS样式1 去掉ul的样式，即li前面的点或其他123ul&#123;list-style: 
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/12/CSS-li/#more" rel="contents">
+            <a class="btn" href="/2017/07/12/CSS-li/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1533,7 +1697,7 @@ CSS样式1 去掉ul的样式，即li前面的点或其他123ul&#123;list-style: 
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/11/OracleImport/#more" rel="contents">
+            <a class="btn" href="/2017/07/11/OracleImport/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1700,175 +1864,7 @@ text-decoration参数：none : 　无装饰blink : 　闪烁underline : 　下�
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/07/css_a/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/Eclipse-Property/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="篱笆外小雨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="篱笆外小雨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/24/Eclipse-Property/" itemprop="url">
-                  Eclipse实用技巧：部分选项属性设置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T10:32:24+08:00">
-                2017-06-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Eclipse/" itemprop="url" rel="index">
-                    <span itemprop="name">Eclipse</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/06/24/Eclipse-Property/" class="leancloud_visitors" data-flag-title="Eclipse实用技巧：部分选项属性设置">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          简单介绍Eclipse的部分选项属性设置
-设置UTF-8编码格式 window–&gt;preference–&gt;General–&gt;Workspace–&gt;Text file encoding–&gt;Other–&gt;UTF-8 
-设置Eclipse字体大小和样式 window–&gt;preference–&gt;General–&gt;APPearance–&gt;Colors and Fonts–&gt;Basic–&gt;Text Font–&gt;Edit 
-设置Web下JSP编码格式 window–&gt;preference–&gt;Web–&gt;JSP Files–&gt;Encoding–&gt;ISO 10646/Unicode(UTF-8) 
-配置服务器 window–&gt;preference–&gt;Server–&gt;Runtime Environments–&gt;Add–&gt;Apache(版本自己选)–&gt;next–&gt;Browse(服务器路径)–&gt;Finish 
-设置Eclipse黑色主题 window–&gt;preference–&gt;General–&gt;APPearance–&gt;Theme–&gt;Dark 
-设置显示行数 window–&gt;preference–&gt;General–&gt;Editors–&gt;Text Editors–&gt;Show line numbers 
-设置代码自动补全 window–&gt;preference–&gt;Java–&gt;Editor–&gt;Content Assist–&gt;Auto activation triggers for Java:–&gt;.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/24/Eclipse-Property/#more" rel="contents">
+            <a class="btn" href="/2017/07/07/css_a/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1954,7 +1950,7 @@ text-decoration参数：none : 　无装饰blink : 　闪烁underline : 　下�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1976,7 +1972,7 @@ text-decoration参数：none : 　无装饰blink : 　闪烁underline : 　下�
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

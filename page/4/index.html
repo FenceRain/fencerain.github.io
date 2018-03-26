@@ -282,6 +282,180 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/SuperScan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/10/SuperScan/" itemprop="url">
+                  使用SuperScan对目标主机进行端口扫描/网络服务扫描
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T10:40:52+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络安全/" itemprop="url" rel="index">
+                    <span itemprop="name">网络安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/10/SuperScan/" class="leancloud_visitors" data-flag-title="使用SuperScan对目标主机进行端口扫描/网络服务扫描">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          软件介绍SuperScan是由Foundstone公司开发的一款免费的扫描工具，功能强大，扫描速度快。
+软件下载地址下面开始介绍软件的使用这是一款绿色软件，不需要安装，解压后直接运行可执行文件。（需要以管理员身份运）
+运行后的初始界面
+扫描（scan）对局域网中的主机进行扫描在“start IP” 填入想要扫描的起始IP地址，在“End IP”填入结束扫描的IP地址。单击箭头按钮将目标IP地址范围添加到扫描地址池中，运行端口扫描。扫描结束后，可以点击“查看HTML结果”（View HTNL Results），在浏览器器中查看本次扫描结果。出现TCP端口扫描结果为0，是因为由于主机禁止了扫描器的ICMP扫描响应，因此需要修改对主机的扫描方式。下面是一次扫描结果
+
+从结果中可以看出该网络中共有14台活动的主机，其中192.168.191.2开放了7个TCP端口：81、135、139、445、1025、3389、9090。主机192168.191.3开放了8个TCP端口：21、80、135、139、445、1025、1433、3389。
+主机和服务器扫描设置（Host and Service Discover）如果扫描结果不满足需求，这就需要对扫描进行一些修改。取消“查找主机”复选框。选中“UDP端口扫描”，将UDP扫描类型设置为Data。选中“TCP端口扫描”，将TCP扫描类型设置为直接连接（Connect）。
+
+扫描选项（Scan Options）对扫描进程进行进一步的控制。可以设置扫描过程中主机和通过审查的服务数，主机名的解析数，标志获取。标志获取（Banner Grabbing）表示在规定的时间内是否收到回应。
+
+工具（Tools）SuperScan的Tools可以较快的得到关于一个主机的信息。正确的输入主机名或IP或默认的连接服务器。选择想要进行的操作，相关信息就会在右边的文本框中显示出来。
+
+Windows枚举（Windows Enumeration）根据需要枚举出想要查看的Windows主机的相关信息
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/10/SuperScan/#далее" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/07/Creategithub/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -458,7 +632,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/07/Creategithub/#more" rel="contents">
+            <a class="btn" href="/2017/04/07/Creategithub/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -619,7 +793,7 @@
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/05/Blog001/#more" rel="contents">
+            <a class="btn" href="/2017/04/05/Blog001/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -781,7 +955,7 @@
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/05/c0001/#more" rel="contents">
+            <a class="btn" href="/2017/04/05/c0001/#далее" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -867,7 +1041,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -889,7 +1063,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
