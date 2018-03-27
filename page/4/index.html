@@ -282,6 +282,179 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/15/Sasuse/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/15/Sasuse/" itemprop="url">
+                  SAS的基本应用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T22:40:36+08:00">
+                2017-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据挖掘/" itemprop="url" rel="index">
+                    <span itemprop="name">数据挖掘</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/15/Sasuse/" class="leancloud_visitors" data-flag-title="SAS的基本应用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          关于SAS的基本应用不同版本的SAS，使用规则会有所不同
+定义逻辑库 data (链接d盘的data文件夹下)1libname data 'D:DATA\';
+删除逻辑库 Data1libname data clear;
+变量的命名最多32个字符长，第一个字符必须是字母或下划线，不能有空格。不能包含特殊字符（如￥，@，#）
+SAS运算符：不等于: ~=、 &lt;&gt;、ne等于： eq、=大于等于：&gt;=、ge小于等于：&lt;=、le大于：&gt;、gt小于：&lt;、lt逻辑运算符：&amp;、| ~连接符：||
+设置当前逻辑库1options user=data;
+数据步一般形式：1234DATA 数据集;   语句;   ......RUN;
+过程步一般形式12345proc 过程名 DATA=分析数据集 [选项];	过程语句 / [选项]	过程语句 / [选项]	......run;
+控制语句123456789if 条件 then 语句; else 语句;do 变量=初值 to 终值 by 步长;	语句;end;do while (条件); 或者 do until (条件);语句;end;
+对表格进行排序123456789降序排列proc sort data = student;by descending age;  run;升序排列proc sort data=student;by no;run;
+数据合并纵向合并或数据集复制123data table;set table1 table2;run;
+横向合并(先对要合并的数据集按相同的变量排序)1234data table;merge table1 table2;by no;run;
+如果table1与 table2的变量不完全相同，需要在结果中只包含共同的变量：123456789data table;    set table1(keep=保留变量名列表)          table2 (keep=保留变量名列表);          run;            或：data table;    set table1(drop=去除变量名列表)          table2 (drop=去除变量名列表);          run;
+如果需要在结果中只包含部分观测：1234data ta
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/15/Sasuse/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/SuperScan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1041,7 +1214,7 @@ Windows枚举（Windows Enumeration）根据需要枚举出想要查看的Window
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1052,7 +1225,7 @@ Windows枚举（Windows Enumeration）根据需要枚举出想要查看的Window
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1063,7 +1236,7 @@ Windows枚举（Windows Enumeration）根据需要枚举出想要查看的Window
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
