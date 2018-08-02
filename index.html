@@ -95,6 +95,7 @@
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="篱笆外小雨">
 <meta property="og:description" content="刚刚好^_^">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="篱笆外小雨">
 <meta name="twitter:description" content="刚刚好^_^">
@@ -282,6 +283,163 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/02/resetGithub/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="篱笆外小雨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="篱笆外小雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/08/02/resetGithub/" itemprop="url">
+                  重装系统后重新配置Hexo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-02T20:10:50+08:00">
+                2018-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客相关/" itemprop="url" rel="index">
+                    <span itemprop="name">博客相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/02/resetGithub/" class="leancloud_visitors" data-flag-title="重装系统后重新配置Hexo">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>因为重装了系统，博客需要重新配置，为了避免每次都找半天，所以记录一下这次，当个备份，也希望可以对其他人有所帮助。</p>
+<h3 id="1-重装Git、Node-js、Hexo"><a href="#1-重装Git、Node-js、Hexo" class="headerlink" title="1. 重装Git、Node.js、Hexo"></a>1. 重装Git、Node.js、Hexo</h3><p>启动Git，安装Hexo：$ npm install -g hexo-cli</p>
+<h3 id="2-重新配置密钥"><a href="#2-重新配置密钥" class="headerlink" title="2. 重新配置密钥"></a>2. 重新配置密钥</h3><p>ssh-keygen -t rsa -C “邮箱地址” </p>
+<h3 id="3-在GitHub中重新添加密钥"><a href="#3-在GitHub中重新添加密钥" class="headerlink" title="3. 在GitHub中重新添加密钥"></a>3. 在GitHub中重新添加密钥</h3><h3 id="4-设置姓名和邮箱地址"><a href="#4-设置姓名和邮箱地址" class="headerlink" title="4. 设置姓名和邮箱地址"></a>4. 设置姓名和邮箱地址</h3><p>git config –global user.name “名字”<br>git comnfig –global user.email “邮箱地址”</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/createTomcat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -392,9 +550,9 @@
       
         
           
-            <p>找到Tomcat插件的下载地址，可以在<a href="https://marketplace.eclipse.org/" target="_blank" rel="external">https://marketplace.eclipse.org/</a>中搜索<code>Eclipse Tomcat Plugin</code></p>
+            <p>找到Tomcat插件的下载地址，可以在<a href="https://marketplace.eclipse.org/" target="_blank" rel="noopener">https://marketplace.eclipse.org/</a>中搜索<code>Eclipse Tomcat Plugin</code></p>
 <p>复制下载链接<code>https://devtools.his.de/tomcatplugin/updatesite/</code> </p>
-<h3 id="1-安装Tomcat插件"><a href="#1-安装Tomcat插件" class="headerlink" title="1.安装Tomcat插件"></a>1.安装Tomcat插件</h3><p>打开Eclipse，选择菜单栏的<code>Help</code>&gt;<code>Install New Software</code>&gt;<code>Add</code>&gt;<code>Name</code>自定义，<code>Location</code>为<a href="https://devtools.his.de/tomcatplugin/updatesite/&gt;`" target="_blank" rel="external">https://devtools.his.de/tomcatplugin/updatesite/&gt;`</a> OK <code>&gt;</code> 勾选下载项 `</p>
+<h3 id="1-安装Tomcat插件"><a href="#1-安装Tomcat插件" class="headerlink" title="1.安装Tomcat插件"></a>1.安装Tomcat插件</h3><p>打开Eclipse，选择菜单栏的<code>Help</code>&gt;<code>Install New Software</code>&gt;<code>Add</code>&gt;<code>Name</code>自定义，<code>Location</code>为<code>https://devtools.his.de/tomcatplugin/updatesite/</code>&gt;<code>OK</code> &gt; <code>勾选下载项</code></p>
 <p>安装结束提示重启Eclipse，重启之后菜单栏出现三只小猫图标，插件安装成功。</p>
 <h3 id="2-部署Tomcat"><a href="#2-部署Tomcat" class="headerlink" title="2.部署Tomcat"></a>2.部署Tomcat</h3><p>选择菜单栏<code>Windows</code>&gt;<code>Preference</code>&gt;<code>Server</code>&gt;<code>Runtime Environments</code>&gt;<code>Add</code>&gt;选择Tomact版本&gt;<code>Next</code>选择自己的Tomcat路径&gt;<code>Finish</code></p>
 <h3 id="3-将web应用部署到Tomcat服务器中"><a href="#3-将web应用部署到Tomcat服务器中" class="headerlink" title="3.将web应用部署到Tomcat服务器中"></a>3.将web应用部署到Tomcat服务器中</h3><p>选择菜单栏<code>Windows</code>&gt;<code>Show View</code>&gt;<code>Servers</code>&gt;<code>No servers are available. Click ths link to create a new server.</code>&gt;<code>选择相应的Tomcat版本</code>&gt;<code>Next</code>&gt;<code>选择项目，Add</code>&gt;<code>Finish</code></p>
@@ -563,9 +721,9 @@
         
           
             <p>基本信息：Eclipse版本2.7.2，JDK版本1.8</p>
-<h3 id="1-下载PyDev"><a href="#1-下载PyDev" class="headerlink" title="1.下载PyDev"></a>1.下载PyDev</h3><p>打开Eclipse，选择<code>help</code>&gt;<code>Install</code>&gt;<code>Add</code>输入名称，Location为<a href="https://dl.bintray.com/fabioz/pydev/6.3.3" target="_blank" rel="external">https://dl.bintray.com/fabioz/pydev/6.3.3</a></p>
+<h3 id="1-下载PyDev"><a href="#1-下载PyDev" class="headerlink" title="1.下载PyDev"></a>1.下载PyDev</h3><p>打开Eclipse，选择<code>help</code>&gt;<code>Install</code>&gt;<code>Add</code>输入名称，Location为<a href="https://dl.bintray.com/fabioz/pydev/6.3.3" target="_blank" rel="noopener">https://dl.bintray.com/fabioz/pydev/6.3.3</a></p>
 <p>完成之后重启Eclipse，在<code>windows</code>&gt;<code>perferences</code>出现<code>PyDev</code>配置项,表示<code>PyDev</code>插件安装成功。</p>
-<h3 id="2-配置解释器"><a href="#2-配置解释器" class="headerlink" title="2.配置解释器"></a>2.配置解释器</h3><p>首先需要安装Python的解释器，未安装Python解释器，请到官网下载<a href="https://www.python.org/" target="_blank" rel="external">https://www.python.org/</a>.</p>
+<h3 id="2-配置解释器"><a href="#2-配置解释器" class="headerlink" title="2.配置解释器"></a>2.配置解释器</h3><p>首先需要安装Python的解释器，未安装Python解释器，请到官网下载<a href="https://www.python.org/" target="_blank" rel="noopener">https://www.python.org/</a>.</p>
 <p>我用的是Python3.x版本，在Eclipse菜单栏中，选择<code>windows</code>&gt;<code>perferences</code>&gt;<code>PyDev</code>&gt;<code>Interpreter</code>&gt; <code>Python Interpreter</code>&gt;<code>New</code>&gt;<code>Interpreter Name</code>可以随便命名，<code>Interpreter Executable</code>为Python.exe路径</p>
 <p>点击<code>ok</code>,然后在<code>Python Interpreters</code>窗口下点击<code>Apply</code>,即完成了Python解释器的配置。</p>
 <p>到此Python的开发环境就已经完成了配置，可以使用Eclipse开始编写Python了。</p>
@@ -1410,13 +1568,13 @@
           
             <p>描述：给定一个字符串，将字符串反转（逆序）输出。例如，“hello”输出为“olleh”。</p>
 <p>方法一：<br>将String转换成char，用遍历的方式从后向前遍历。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=string.length()-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">			System.out.print(string.charAt(i));</div><div class="line">		&#125;</div></pre></td></tr></table></figure>
-<p>或者<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> ch[] = string.toCharArray();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=ch.length-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</div><div class="line">			System.out.print(ch[j]);</div><div class="line">		&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=string.length()-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">			System.out.print(string.charAt(i));</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ch[] = string.toCharArray();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=ch.length-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">			System.out.print(ch[j]);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
 <p>方法二：<br>使用jdk自带reverse方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">StringBuilder sBuilder = <span class="keyword">new</span> StringBuilder(string);</div><div class="line">		StringBuffer sBuffer = <span class="keyword">new</span> StringBuffer(string);</div><div class="line">		System.out.println(sBuilder.reverse().toString());</div><div class="line">		System.out.println(sBuffer.reverse().toString());</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sBuilder = <span class="keyword">new</span> StringBuilder(string);</span><br><span class="line">		StringBuffer sBuffer = <span class="keyword">new</span> StringBuffer(string);</span><br><span class="line">		System.out.println(sBuilder.reverse().toString());</span><br><span class="line">		System.out.println(sBuffer.reverse().toString());</span><br></pre></td></tr></table></figure>
 <p><code>注：String类本身没有反转类，需要包装成Stringbulid或者StringBuffer类。</code></p>
 <p>完整代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringReverse</span> </span>&#123;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		String string = <span class="string">"hello"</span>;</div><div class="line">		StringReverse stringReverse = <span class="keyword">new</span> StringReverse();</div><div class="line">		stringReverse.Fun1(string);</div><div class="line">		stringReverse.Fun2(string);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//方法一：String转成char</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Fun1</span><span class="params">(String string)</span></span>&#123;</div><div class="line">		<span class="keyword">char</span> ch[] = string.toCharArray();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=ch.length-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</div><div class="line">			System.out.print(ch[j]);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=string.length()-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">			System.out.print(string.charAt(i));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//方法二：jdk自带reverse方法</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Fun2</span><span class="params">(String string)</span></span>&#123;</div><div class="line">		StringBuilder sBuilder = <span class="keyword">new</span> StringBuilder(string);</div><div class="line">		StringBuffer sBuffer = <span class="keyword">new</span> StringBuffer(string);</div><div class="line">		System.out.println(sBuilder.reverse().toString());</div><div class="line">		System.out.println(sBuffer.reverse().toString());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringReverse</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String string = <span class="string">"hello"</span>;</span><br><span class="line">		StringReverse stringReverse = <span class="keyword">new</span> StringReverse();</span><br><span class="line">		stringReverse.Fun1(string);</span><br><span class="line">		stringReverse.Fun2(string);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//方法一：String转成char</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Fun1</span><span class="params">(String string)</span></span>&#123;</span><br><span class="line">		<span class="keyword">char</span> ch[] = string.toCharArray();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=ch.length-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">			System.out.print(ch[j]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=string.length()-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">			System.out.print(string.charAt(i));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//方法二：jdk自带reverse方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Fun2</span><span class="params">(String string)</span></span>&#123;</span><br><span class="line">		StringBuilder sBuilder = <span class="keyword">new</span> StringBuilder(string);</span><br><span class="line">		StringBuffer sBuffer = <span class="keyword">new</span> StringBuffer(string);</span><br><span class="line">		System.out.println(sBuilder.reverse().toString());</span><br><span class="line">		System.out.println(sBuffer.reverse().toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1784,200 +1942,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/27/SoftwareTesting/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="篱笆外小雨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="篱笆外小雨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/12/27/SoftwareTesting/" itemprop="url">
-                  软件测试基础知识
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-27T19:36:45+08:00">
-                2017-12-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统开发与运行/" itemprop="url" rel="index">
-                    <span itemprop="name">系统开发与运行</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统开发与运行/软件测试/" itemprop="url" rel="index">
-                    <span itemprop="name">软件测试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/12/27/SoftwareTesting/" class="leancloud_visitors" data-flag-title="软件测试基础知识">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="测试过程"><a href="#测试过程" class="headerlink" title="测试过程"></a>测试过程</h4><ul>
-<li>制定测试计划。内容主要有测试内容、进度安排、测试所需环境和条件、测试培训安排等</li>
-<li>编制测试大纲。明确、详尽地规定测试中针对系统的每一项功能或特征所必须完成的基本测试项目和测试完成标准。</li>
-<li>设计并生成测试用例，产生测试设计说明文档。主要有被测试项目、输入数据、测试过程和预期输出结果等</li>
-<li>实施测试。</li>
-<li>生成测试报告。对测试进行概要说明，列出测试结论，指出缺陷和错误，给出建议。</li>
-</ul>
-<h4 id="测试策略"><a href="#测试策略" class="headerlink" title="测试策略"></a>测试策略</h4><p>有效的软件测试分为4步：单元（模块）测试、集成测试、确认（验收）测试和系统测试</p>
-<h5 id="单元测试（白盒测试）"><a href="#单元测试（白盒测试）" class="headerlink" title="单元测试（白盒测试）"></a>单元测试（白盒测试）</h5><p>在模块编写完成且无编译错误后进行。侧重于对模块中的内部处理逻辑与数据结构。</p>
-<p>单元测试内容<br>1 模块接口。测试模块的输入参数和形式参数在个数、属性、单位上是否一致；调用其他模块时，所给出的实际参数和被调用模块的形式参数在个数、属性、单位上是否一致；调用标准函数时，所使用的参数在属性、数目和顺序上是否正确；全局变量在各模块中的定义和用法是否一致；输入是否仅改变了形式参数；开/关的语句是否正确；规定的IO格式是否与输入/输出语句一致；在使用文件之前是否已经打开文件或使用文件之后是否已经关闭文件。<br>2 局部数据结构。变量的说明是否合适；是否使用了尚未赋值或尚未初始化的变量；变量的初始值或默认值是否正确；变量名是否有错。<br>3 重要的执行路径。发现是否有计算、比较或控制流方面错误。<br>4 出错处理。好的设计应该能够预测到出错条件并且有对出错处理的路径。<br>5 边界条件。</p>
-<h5 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h5><p>集成测试有两种方法：一种非增量集成，另一种增量集成</p>
-<ul>
-<li>增量集成策略<br>1 自顶向下集成测试。自顶向下集成测试时一种构造软件体系结构的增量方法。模块集成顺序为从主控模块（主程序）开始，沿着控制层逐步向下，以深度优先或广度优先的方式将从属主控模块的模块集成到结构中。<br>2 自底向上集成测试。自底向上集成测试就是从原子模块（程序结构最底层构件）开始进行构造和测试。<br>3 回归测试。重新执行已测试过的某些子集，以确保变更没有传播不期望的副作用。<br>4 冒烟测试。在测试中发现问题，找到了一个Bug，然后开发人员会来修复这个Bug。这时想知道这次修复是否真的解决了程序的Bug，或者是否会对其它模块造成影响，就需要针对此问题进行专门测试，这个过程就被称为Smoke Test。</li>
-</ul>
-<h5 id="确认测试"><a href="#确认测试" class="headerlink" title="确认测试"></a>确认测试</h5><p>测试集中于用户可见动作和用户可识别的系统输出</p>
-<ul>
-<li>α测试与β测试。<code>α测试</code>是由有代表性的最终用户在开发者的场所进行。开发者在用户后面观看，并记录错误和使用问题。<code>β测试</code> 在一个或多个最终用户场所执行。最终用户记录测试过程中遇到的所有问题（现实存在或想象的），并定期报告给开发者。接到问题测试报告后开发人员对软件进行修改，然后准备向用户发布软件产品。</li>
-</ul>
-<h5 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h5><p>系统测试是将已确认的软件、计算机硬件、外设和网络等因素结合在一起，进行信息系统的各种集成测试和确认测试，目的在于通过与系统的需求分析比较，发现所开发的系统与用户需求不符或矛盾的地方。<br>1 恢复测试。通过各种方式强制地让系统发生故障，并验证能否安装要求从故障中恢复过来，并在规定的时间内开始进行事物处理，而且不对系统造成任何伤害。<br>2 安全性测试。验证建立在系统内的保护机制是否能够实际保护系统不受非法入侵。测试过程中，测试人员模拟非法入侵者，采用各种方法冲破防线。<br>3 压力测试。压力测试要求以非正常的数量、频率或容量等方式执行系统。<br>4 性能测试。测试软件在集成环境中的运行性能。<br>5 部署测试。在多种运行环境中测试软件。</p>
-<h4 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h4><p>软件测试方法分为静态测试和动态测试。静态测试是指被测试程序不在机器上运行，而是采用人工检测和计算机辅助静态分析的手段对程序进行检测。动态测试是指运行程序发现错误，可采用黑盒测试和白盒测试。</p>
-<h5 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h5><p>黑盒测试也称功能测试，在完全不考虑软件的内部结构和特征的情况下，测试软件的外部特性。<br>常用的黑盒测试技术有等价类划分、边界值分析、错误推测和因果图的等。<br>1 等价类划分。将程序的输入域划分为若干等价类，然后从每个等价类中选取一个代表性数据作为测试用例。<br>2 边界值分析。输入的边界比中间值更加容易发生错误。<br>3 错误推测。基于经验和直觉推测程序中所有可能存在的各种错误，从而有针对性的设计测试用例。即列举程序中所有可能的有的错误和容易发生的错误的特殊情况，根据他们选择测试用例。<br>4 因果图。从自然语言描述的程序规格说明中找到因（输入条件）和果（输出或程序状态的改变），通过因果图转换为判定表。</p>
-<h5 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h5><p>白盒测试也称结构测试，根据程序的内部结构和逻辑来设计测试用例，对程序的路径和过程进行测试，检查是否满足设计的要求。<br>白盒测试常用的测试技术是逻辑覆盖、循环覆盖和基本路径测试。<br>1 逻辑覆盖。逻辑覆盖考察测试数据运行被测试程序时的覆盖程度，主要的逻辑覆盖标准有语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖和路径覆盖6种。</p>
-<ul>
-<li>语句覆盖。语句覆盖指选择足够的测试数据，使被测试过程中的每条语句至少执行一次。</li>
-<li>判定覆盖。判定覆盖指设计足够的测试用例，使得被测试程序中的每个判定表达式至少获得一次“真”值和“假”值。</li>
-<li>条件覆盖。条件覆盖指构造一组测试用例，是的每一判定语句中的每个逻辑条件的各种可能的值至少满足一次。</li>
-<li>判定/条件覆盖。判定/条件覆盖指设计足够的测试用例，使得判定中的每个条件的所有可能值（真/假）至少出现一次，并使每个判定本身的判定结果（真/假）也至少出现一次。</li>
-<li>条件组合覆盖。条件组合覆盖指设计足够多的测试用例，使得每个判定条件的各种可能值的组合都至少出现一次。</li>
-<li>路径覆盖。路径覆盖指覆盖被测试程序中所有可能的路径。-<br>2 循环覆盖。执行足够的测试用例，使得循环中的每个条件都得到验证。<br>3 基本路径覆盖。在程序控制流图的基础上通过分析控制流图的环路复杂性，导出基本可执行路径集合，从而设计测试用例。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2027,7 +1991,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
